@@ -50,7 +50,7 @@
 }
 .me-one ul li a:hover{
 	text-decoration:none;
-	color:#73B6E1;
+	color:green;
 }
 .me-one h4 {
     color: #73B6E1;
@@ -146,9 +146,10 @@
 	color:#000;
 }
 .skyblue>li:hover>a,.skyblue>li.active>a,.skyblue .dropdown li:hover>a{
-	color:#73B6E1;
-}.
-skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{
+	color: green;
+	font-weight: 500;
+}
+.skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{
 	border:solid 1px #0194be;
 }
 .skyblue form.contact input[type="submit"]{
