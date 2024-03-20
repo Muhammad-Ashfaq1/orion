@@ -19,3 +19,13 @@ Route::get('/', function () {
 Route::get('/about', function (){
     return view('partials.about');
 })->name('about');
+
+Route::get('/product-list', function (){
+    return view('partials.product-list');
+})->name('product-list');
+Route::get('/single-product', function (){
+    return view('partials.single-product');
+})->name('single-product');
+Route::get('/support', function (){
+    return view('partials.support');
+})->name('support');
