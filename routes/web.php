@@ -29,3 +29,7 @@ Route::get('/single-product', function (){
 Route::get('/support', function (){
     return view('partials.support');
 })->name('support');
+
+Route::get('/project', function (){
+    return view('partials.project');
+})->name('project');

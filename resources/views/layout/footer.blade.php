@@ -40,22 +40,25 @@
                 </ul>
             </div>
             <div class="col-md-3 infor-left">
-                <h3>My Account</h3>
+                <h3>Our Products</h3>
                 <ul>
                     <li><a href="account.html">
-                            <p>My Account</p>
+                            <p>LED Street Light</p>
                         </a></li>
                     <li><a href="#">
-                            <p>My Credit slips</p>
+                            <p>LED Flood Light</p>
                         </a></li>
                     <li><a href="#">
-                            <p>My Merchandise returns</p>
+                            <p>LED High Bay Light</p>
                         </a></li>
                     <li><a href="#">
-                            <p>My Personal info</p>
+                            <p>LED Garden Light</p>
                         </a></li>
                     <li><a href="#">
-                            <p>My Addresses</p>
+                            <p>Solar LED Street Light</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>Other Light</p>
                         </a></li>
                 </ul>
             </div>
