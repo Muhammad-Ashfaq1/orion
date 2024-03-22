@@ -31,7 +31,7 @@
                     <li><a href="#">
                             <p>Our Stores</p>
                         </a></li>
-                    <li><a href="contact.html">
+                    <li><a href="{{ route('contact-us') }}">
                             <p>Contact Us</p>
                         </a></li>
                     <li><a href="#">
@@ -66,7 +66,8 @@
                     Punjab 53710.
                 </h4>
                 <h5>042 37510711</h5>
-                <p><a href="mailto:example@email.com">Orionlightingpvtltd@gmail.com</a></p>
+                <p><a href="mailto:example@email.com" style="word-break: break-all;">Orionlightingpvtltd@gmail.com</a>
+                </p>
             </div>
             <div class="clearfix"></div>
         </div>
