@@ -30,6 +30,16 @@ Route::get('/support', function (){
     return view('partials.support');
 })->name('support');
 
+Route::get('/contact-us', function (){
+    return view('partials.contact');
+})->name('contact-us');
+
+Route::get('/login', function (){
+    return view('partials.login');
+})->name('login');
+
+
 Route::get('/project', function (){
     return view('partials.project');
 })->name('project');
+

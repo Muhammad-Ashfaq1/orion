@@ -458,6 +458,129 @@ body {
 }
 
 
+.contact-us, .login-page {
+    background-color: #fff !important;
+}
+
+.contact-us input:focus, .contact-us textarea:focus, .login-page input:focus, .login-page textarea:focus {
+    box-shadow: none;
+    outline: green;
+    border-color: green;
+}
+
+
+.contact-us .submit-btn, .login-page .login-btn {
+    background-color: green;
+    font-size: 18px;
+    font-weight: 500;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    transition: all 1s ease-in-out;
+}
+
+.contact-us .submit-btn:hover, .login-page .submit-btn:hover {
+    background-color: green;
+    opacity: 0.7;
+}
+
+.login-btn .form-floating>.form-control {
+    padding: 10px !important;
+}
+
+.login-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.login-container .loginbox {
+    position: relative;
+    max-width: 600px !important;
+    height: auto !important;
+    padding: 0 0 20px 0;
+    -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+.login-container .loginbox .loginbox-title {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: green;
+}
+
+.login-container .loginbox .loginbox-textbox {
+    padding: 10px 40px;
+}
+
+.login-container .loginbox .loginbox-textbox .form-control {
+    -webkit-border-radius: 3px !important;
+    -webkit-background-clip: padding-box !important;
+    -moz-border-radius: 3px !important;
+    -moz-background-clip: padding !important;
+    border-radius: 3px !important;
+    background-clip: padding-box !important;
+    font-size: 16px;
+}
+
+.login-container .loginbox .loginbox-forgot {
+    padding-left: 40px;
+}
+
+.login-container .loginbox .loginbox-forgot a {
+    font-size: 11px;
+    color: #666;
+}
+
+.login-container .loginbox .loginbox-forgot a:hover {
+    color: green;
+}
+
+.login-container .loginbox .loginbox-submit {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container .loginbox .loginbox-submit input {
+    background-color: green;
+    font-size: 18px;
+    font-weight: 500;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    transition: all 1s ease-in-out;
+    width: auto;
+    text-align: center;
+    padding: 5px 30px;
+}
+
+.login-container .loginbox .loginbox-submit input:hover {
+    background-color: green;
+    opacity: 0.7;
+}
+
+.login-container .logobox {
+    max-width: 600px !important;
+    height: 50px !important;
+    padding: 5px;
+    margin-top: 15px;
+    -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+    background-color: #fff;
+    text-align: left;
+=======
+
 /* project */
 .banner-project {
     background-image: url('../images/about.jpg');
@@ -642,4 +765,5 @@ body {
 .inner-filters .form-check-label {
     font-weight: 500;
     font-size: 18px;
+
 }
