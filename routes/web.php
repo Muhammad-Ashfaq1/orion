@@ -14,42 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('Home');
-})->name('home');
-//
-//
-//
-//
-//Route::get('/about-us', function (){
-//    return view('partials.about-us');
-//})->name('about-us');
-//
-//Route::get('/product-list', function (){
-//    return view('partials.product-list');
-//})->name('product-list');
-//Route::get('/single-product', function (){
-//    return view('partials.single-product');
-//})->name('single-product');
-//Route::get('/support', function (){
-//    return view('partials.support');
-//})->name('support');
-//
-//Route::get('/contact-us', function (){
-//    return view('partials.contact-us');
-//})->name('contact-us');
-//
-//Route::get('/login', function (){
-//    return view('partials.login');
-//})->name('login');
-//
-//
-//Route::get('/project', function (){
-//    return view('partials.projects');
-//})->name('project');
-
-
-
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function(){
     Route::get('/', 'index')->name('home');
     Route::get('/about-us', 'aboutUs')->name('about-us');
