@@ -15,32 +15,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{  route('product.index') }}">
                         <i class="fas fa-building"></i>
-                        <span>Departments</span>
-                    </a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <i class="far fa-address-book"></i>
-                        <span>Desigantions</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <i class="mdi mdi-account"></i>
-                        <span>Employee</span>
-                    </a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <i class="ti-printer"></i>
-                        <span>Asset Types</span>
+                        <span>Products</span>
                     </a>
                 </li>
 

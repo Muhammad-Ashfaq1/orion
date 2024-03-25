@@ -25,6 +25,13 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function()
     Route::get('/projects', 'projects')->name('projects');
 });
 
+Route::controller(\App\Http\Controllers\Admin\ProductController::class)->prefix('/product')->group(function () {
+    Route::get('/', 'index')->name('product.index');
+    Route::post('/add', 'store')->name('product.store');
+    Route::get('/edit/{id}','edit')->name('product.edit');
+    Route::delete('delete/{id}', 'delete')->name('product.delete');
+    Route::get('get-all-product-type', 'getAllProductType')->name('product.delete');
+});
 
 Route::get('/dashboard', function (){
     return view('dashboard');

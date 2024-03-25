@@ -1,10 +1,35 @@
 
-$(document).on('click', '.js-add-asset-type', function (el) {
-    $('#js-add-asset-type-modal').modal('show');
-    $('#js-asset-type-Form')[0].reset();
+$(document).on('click', '.js-add-product', function (el) {
+    $('#js-add-product-modal').modal('show');
+    getAllProductType();
 });
 
 
+
+function getAllProductType() {
+    $.ajax({
+        url: '/product/get-all-product-type',
+        method: 'GET',
+        dataType: 'json',
+        async: false,
+        success: async function (data) {
+            $('#js-product-type-name-dropdown').empty();
+            $('#js-product-type-name-dropdown').append('<option value="">Choose...</option>');
+            if (Array.isArray(data)) {
+                $.each(data, function (index, value) {
+                    $('#js-product-type-name-dropdown').append(
+                        '<option value="' + value.id + '">' + value.type_name + '</option>');
+                });
+            } else if (typeof data === 'object') {
+                $('#js-product-type-name-dropdown').append('<option value="' + data.id + '">' + value.type_name + '</option>');
+            }
+
+        },
+        error: function (xhr, status, error) {
+            console.error('Error fetching data:', error);
+        }
+    });
+}
 
 // add new asset-type
 $('#js-asset-type-Form').validate({
