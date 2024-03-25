@@ -776,3 +776,16 @@ body {
 .single-para{
     font-size: 24px;
 }
+
+.qoute-wrapper{
+    text-align: end;
+}
+
+.get-quote{
+    padding: 5px 20px;
+    outline: none;
+    border: 0;
+    background-color: green;
+    color: white;
+    border-radius: 25px;
+}

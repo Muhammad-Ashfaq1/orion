@@ -16,6 +16,9 @@
                     </div>
                 </div>
                 <div class="col-12">
+                    <div class="qoute-wrapper">
+                        <button class="get-quote">Get Quotation</button>
+                    </div>
                     <h1 class="table-heading">Specification</h1>
                     <table class="table table-bordered">
                         <thead>
