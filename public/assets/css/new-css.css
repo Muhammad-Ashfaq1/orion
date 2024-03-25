@@ -766,3 +766,13 @@ body {
     font-size: 18px;
 
 }
+
+.table-heading{
+    color: #de8b22;
+}
+.single-heading{
+    font-size: 54px;
+}
+.single-para{
+    font-size: 24px;
+}
