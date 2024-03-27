@@ -7,21 +7,16 @@
                         <div class="img-wrapper position-relative bsb-hover-push">
                             <a href="javascript:void(0)">
                                 <img class="img-fluid rounded w-100 h-100 object-fit-cover" loading="lazy"
-                                    src="{{ asset('assets/images/zigzag1.png') }}" alt="">
+                                    src="{{ asset('assets/images/zigzag1.jpeg') }}" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <div>
                             <p class="mb-4">
-                                Introducing our 50 Watt LED Flood Light with specifications including power of 50W,
-                                voltage of 220-230V, lumens reaching 5000, CCT at 6500K, a lifetime of 25000 hours, CRI
-                                greater than 80, IP67 protection, and constructed from die-cast aluminum.
+                                In the Orion Factory, Surface Mount Technology (SMT) machines are utilized for electronic component placement onto printed circuit boards (PCBs). These SMT machines, such as pick-and-place systems, automate the precise placement of integrated circuit chips and other components onto the PCB surface. This automated process ensures accuracy and efficiency in the assembly of electronic devices, contributing to the high-quality production standards maintained at the Orion Factory.
                             </p>
-                            <p>This
-                                high-efficiency, long-life light not only saves energy but also contributes to saving
-                                the planet and securing our future, with energy savings up to 90%.</p>
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -32,16 +27,15 @@
                         <div class="img-wrapper position-relative bsb-hover-push">
                             <a href="javascript:void(0)">
                                 <img class="img-fluid rounded w-100 h-100 object-fit-cover" loading="lazy"
-                                    src="{{ asset('assets/images/zigzag2.png') }}" alt="">
+                                    src="{{ asset('assets/images/zigzag2.jpeg') }}" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <div>
                             <p class="mb-4">
-                                Presenting our 22 Watt LED light with a lifespan exceeding 15 years*, boasting 25000
-                                hours of operation. Upgrade to our 100W equivalent, emitting 2200 lumens in a crisp
-                                daylight tone of 6400K, offering 90% energy savings.
+                            This equipment is professional for led bulbs inspection.
+                                Through high voltage, normal voltage, low voltage, roaming and fluctuation voltage, impact functions. High temperature zones to observe whether short-circuit, capacitance burst and black points will occur. Also used for inspecting the simulation daily use of LED lamp cycling circuit and roaming seasoning area. Easy to cooperate.
                             </p>
                             <p> Featuring a high CRI of over 80 and
                                 a 220-degree beam angle, this light ensures optimal illumination for any space.</p>
