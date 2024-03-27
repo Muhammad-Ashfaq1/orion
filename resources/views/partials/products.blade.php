@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-3 product-left">
                     <div class="product-main simpleCart_shelfItem">
-                        <a href="{{ route('single-product')}} class="mask"><img class="img-responsive zoom-img"
+                        <a href="{{ route('single-product')}}" class="mask"><img class="img-responsive zoom-img"
                                 src="{{ asset('assets/images/p-3.jpg') }}" alt="" /></a>
                         <div class="product-bottom">
                             <h3>Light Bulb</h3>
