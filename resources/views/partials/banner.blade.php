@@ -4,10 +4,10 @@
             <img src="{{ asset('assets/images/banner2.png') }}" class="d-block w-50 m-auto" alt="...">
         </div>
         <div class="carousel-item text-center">
-            <img src="{{ asset('assets/images/zigzag1.png') }}" class="d-block w-25 m-auto" alt="...">
+            <img src="{{ asset('assets/images/zigzag1.jpeg') }}" class="d-block w-25 m-auto" alt="...">
         </div>
         <div class="carousel-item text-center">
-            <img src="{{ asset('assets/images/zigzag2.png') }}" class="d-block w-25 m-auto" alt="...">
+            <img src="{{ asset('assets/images/zigzag2.jpeg') }}" class="d-block w-25 m-auto" alt="...">
         </div>
         <div class="carousel-item text-center">
             <img src="{{ asset('assets/images/zigzag3.png') }}" class="d-block w-25 m-auto" alt="...">
