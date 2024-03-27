@@ -6,7 +6,7 @@
     <div class="col-md-3">
         <div class="sidebar">
             <div class="main-category" onclick="toggleFilters('filters1')">
-                Main Category 1 <i class="fa fa-angle-right"></i>
+                Indoor <i class="fa fa-angle-right"></i>
             </div>
             <div id="filters1" class="inner-filters" style="display:none;">
                 <div class=" form-check">
@@ -24,19 +24,47 @@
             </div>
 
             <div class="main-category" onclick="toggleFilters('filters2')">
-                Main Category 2 <i class="fa fa-angle-right"></i>
+                OutDoor <i class="fa fa-angle-right"></i>
             </div>
             <div id="filters2" class="inner-filters" style="display:none;">
                 <div class=" form-check">
                     <input class="form-check-input" type="radio" name="filter2" id="filter2_1">
                     <label class="form-check-label" for="filter2_1">
-                        Filter 1
+                        10 W
                     </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="filter2" id="filter2_2">
-                    <label class="form-check-label" for="filter2_2">
-                        Filter 2
+
+                <div class=" form-check">
+                    <input class="form-check-input" type="radio" name="filter2" id="filter2_1">
+                    <label class="form-check-label" for="filter2_1">
+                        15 W
+                    </label>
+                </div>
+
+                <div class=" form-check">
+                    <input class="form-check-input" type="radio" name="filter2" id="filter2_1">
+                    <label class="form-check-label" for="filter2_1">
+                        20 W
+                    </label>
+                </div>
+
+                <div class=" form-check">
+                    <input class="form-check-input" type="radio" name="filter2" id="filter2_1">
+                    <label class="form-check-label" for="filter2_1">
+                        25 W
+                    </label>
+                </div>
+                <div class=" form-check">
+                    <input class="form-check-input" type="radio" name="filter2" id="filter2_1">
+                    <label class="form-check-label" for="filter2_1">
+                        30 W
+                    </label>
+                </div>
+
+                <div class=" form-check">
+                    <input class="form-check-input" type="radio" name="filter2" id="filter2_1">
+                    <label class="form-check-label" for="filter2_1">
+                        35 W
                     </label>
                 </div>
             </div>
