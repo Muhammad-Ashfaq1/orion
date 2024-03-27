@@ -4,10 +4,22 @@ a {
 
 body {
     font-size: 18px !important;
+    /* background-color: rgba(100, 151, 177,0.02) !important; */
+    
+}
+.header-bottom{
+    background-color: #002147;
+    /* padding-bottom: 0px; */
+    margin-bottom: 10px;
+}
+
+.header-bottom .header{
+    padding: 5px 0;
+    /* background: 002147; */
 }
 
 .header-bottom .logos img {
-    width: 160px;
+    width: 130px;
 }
 
 .header-bottom .logo-name-text {
@@ -25,6 +37,18 @@ body {
 
 .timeline img {
     /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); */
+}
+
+.header-bottom .header .search-bar input[type="text"]{
+    background: #fff;
+    border-radius: 8px;
+}
+
+.skyblue li>a, .skyblue>li.showhide span{
+    color: #fff;
+}
+.skyblue>li:hover>a, .skyblue>li.active>a, .skyblue .dropdown li:hover>a{
+    color: #b3cde0;
 }
 
 .banner-container {
@@ -50,10 +74,21 @@ body {
 
 
 /* product list */
+.product-main{
+    border: 1px solid rgb(35,0,150);
+}
+.product-bottom h3{
+   color: #03396c;
+   font-size: 16px;
+}
+.product-left:hover .product-bottom h3{
+    color: #005b96;
+}
 /*panel*/
-.panel {
+.product-list .panel {
     border: none;
     box-shadow: none;
+    border: 1px solid #011f4b;
 }
 
 .panel .panel-body input {
@@ -130,8 +165,8 @@ body {
 }
 
 .pro-page-list a {
-    color: green !important;
-    border-color: green !important;
+    color: #011f4b !important;
+    border-color: 	#6497b1 !important;
 }
 
 .product-list img {
@@ -447,7 +482,7 @@ body {
 }
 
 .capture-btn {
-    background-color: green;
+    background-color: #002147;
     border: 0;
     box-shadow: none;
     outline: none;
@@ -464,23 +499,25 @@ body {
 
 .contact-us input:focus, .contact-us textarea:focus, .login-page input:focus, .login-page textarea:focus {
     box-shadow: none;
-    outline: green;
-    border-color: green;
+    outline: #002147;
+    border-color: #002147;
 }
 
 
 .contact-us .submit-btn, .login-page .login-btn {
-    background-color: green;
+    background: #002147;
     font-size: 18px;
     font-weight: 500;
     border: 0;
     box-shadow: none;
     outline: none;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
-
+.contact .text-primary{
+    color: #002147 !important;
+}
 .contact-us .submit-btn:hover, .login-page .submit-btn:hover {
-    background-color: green;
+    background: rgba(0, 33, 71,0.99);
     opacity: 0.7;
 }
 
@@ -516,7 +553,7 @@ body {
     padding-top: 10px;
     font-size: 20px;
     font-weight: 500;
-    color: green;
+    color: #002147;
 }
 
 .login-container .loginbox .loginbox-textbox {
@@ -543,7 +580,7 @@ body {
 }
 
 .login-container .loginbox .loginbox-forgot a:hover {
-    color: green;
+    color: #002147;
 }
 
 .login-container .loginbox .loginbox-submit {
@@ -552,7 +589,7 @@ body {
 }
 
 .login-container .loginbox .loginbox-submit input {
-    background-color: green;
+    background-color: #002147;
     font-size: 18px;
     font-weight: 500;
     border: 0;
@@ -565,7 +602,7 @@ body {
 }
 
 .login-container .loginbox .loginbox-submit input:hover {
-    background-color: green;
+    background-color: rgba(0, 33, 71,0.99);
     opacity: 0.7;
 }
 
@@ -684,7 +721,8 @@ body {
     position: absolute;
     /* top: 0; */
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgb(35,0,150);
+background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%);
     width: 100%;
     padding: 10px;
     margin: 0;
@@ -709,17 +747,18 @@ body {
     display: block;
     font-size: 14px;
     text-decoration: none !important;
-    color: green;
+    background-color: #011f4b;
+    color: #fff;
     font-weight: 600;
     padding: 10px 20px;
     margin-bottom: 10px;
     transition: all 0.5s ease-in-out;
+    border-radius: 25px;
 }
 
 .book .read-more:hover {
-    background-color: green;
-    border-radius: 25px;
-    color: #fff;
+    background-color: #b3cde0;
+    color: #011f4b;
 }
 
 @media screen and (max-width: 768px) {
@@ -749,9 +788,10 @@ body {
 }
 
 .main-category {
-    background-color: #ccc;
-    color: #000;
+    background-color: #b3cde0;
+    color: #011f4b;
     cursor: pointer;
+    font-weight: 500;
     padding: 10px;
     margin: 10px 0;
 }
@@ -789,3 +829,30 @@ body {
     color: white;
     border-radius: 25px;
 }
+
+.information, .footer{
+    background: #002147;
+    padding: 20px 0;
+}
+
+.information .infor-top h3{
+    color: #fff;
+}
+
+.information .infor-left ul li a h6, .infor-left ul li a p, .infor-left h4, .infor-left h5, .infor-left p a, .footer-right p, .footer-left input[type="text"], .footer-right p a{
+    color: #c3ddf0;
+}
+.footer-left input[type="text"]{
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+}
+.footer-left input[type=submit]{
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.infor-left ul li a span{
+    filter: brightness(0) saturate(100%) invert(93%) sepia(94%) saturate(28%) hue-rotate(254deg) brightness(107%) contrast(100%);
+}
+
