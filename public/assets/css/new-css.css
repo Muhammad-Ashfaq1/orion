@@ -10,7 +10,7 @@ body {
 .header-bottom{
     background-color: #002147;
     /* padding-bottom: 0px; */
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .header-bottom .header{
@@ -71,8 +71,55 @@ body {
 .banner-image.active {
     opacity: 1;
 }
+.carousel-control-prev, .carousel-control-next{
+    background-image: none;
+    width: auto !important;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(166deg) brightness(112%) contrast(102%);
+    opacity: 0.5;
+}
+.carousel-control-next .right-svg{
+    transform: rotate(180deg);
+}
 
 
+.carousel-inner .item{
+    position: relative;
+    transition: opacity 0.6s ease-in-out;
+}
+.carousel-inner .active {
+        opacity: 1; /* Ensure the active slide is fully visible */
+    }
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel-inner .backdrop{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.carousel-inner .carousel-caption{
+    left: 0%;
+    top: 0%;
+    right: 0;
+    transform: translate(0%,0%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.carousel-inner .carousel-caption  .carousel-caption-left{
+    text-align: left;
+}
+.carousel-inner .carousel-caption .carousel-caption-right img{
+    width: 200px;
+}
 /* product list */
 .product-main{
     border: 1px solid rgb(35,0,150);
@@ -856,3 +903,41 @@ background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%
     filter: brightness(0) saturate(100%) invert(93%) sepia(94%) saturate(28%) hue-rotate(254deg) brightness(107%) contrast(100%);
 }
 
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  background-color: #c3ddf0;
+}
+
+.product {
+  width: calc(20% - 20px);
+  height: 600px;
+  margin: 10px; 
+  text-align: left;
+}
+
+.product h2, .product p{
+    color: #002147;
+}
+
+.product-container .product:nth-child(2n) .product-inner.product-end{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+}
+
+.product img {
+    width: 100px;
+    height: 200px;
+    object-fit: contain;
+}
+
+@media (max-width: 1024px){
+.product {
+    padding: 0;
+}
+}
