@@ -102,7 +102,7 @@
                         {{--                                </div>--}}
                         {{--                            </div>--}}
                         </li>
-                        <li class="grid"><a href="{{ route('about-us') }}">About</a>
+                        <li class="grid"><a href="{{ route('about-us') }}">About Us</a>
                         <li class="grid"><a href="{{ route('contact-us') }}">Contact Us</a>
 
                         </li>
