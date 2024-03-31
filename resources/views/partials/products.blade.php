@@ -1,4 +1,4 @@
-<div class="product-container">
+<div class="product-container" id="product-container">
     <div class="product">
         <div class="product-inner">
             <a href="{{ route('single-product')}}">

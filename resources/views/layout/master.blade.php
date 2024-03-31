@@ -26,6 +26,7 @@
     <script src="{{ asset('assets/js/simpleCart.min.js') }}"> </script>
     <link href="{{ asset('assets/css/memenu.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('assets/css/new-css.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <script type="text/javascript" src="{{ asset('assets/js/memenu.js') }}"></script>
     <script>
     $(document).ready(function() {
@@ -51,7 +52,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
-
     <script src="{{ asset('assets/js/jsQR.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

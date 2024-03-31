@@ -2,7 +2,7 @@
 <div class="information">
     <div class="container">
         <div class="infor-top">
-            <div class="col-md-3 infor-left">
+            <div class="col-md-3 col-12 infor-left">
                 <h3>Follow Us</h3>
                 <ul>
                     <li><a href="https://www.facebook.com/profile.php?id=100077661672038&mibextid=uzlsIk"><span
@@ -19,7 +19,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div class="col-md-3 infor-left">
+            <div class="col-md-3 col-12 infor-left">
                 <h3>Information</h3>
                 <ul>
                     <li><a href="#">
@@ -39,7 +39,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div class="col-md-3 infor-left">
+            <div class="col-md-3 col-12 infor-left">
                 <h3>Our Products</h3>
                 <ul>
                     <li><a href="account.html">
@@ -62,7 +62,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div class="col-md-3 infor-left">
+            <div class="col-md-3 col-12 infor-left">
                 <h3>Orion Lighting</h3>
                 <h4>Orion Lights,
                     <span>LLAL BADSHAH ROAD, Multan Rd, Khanpur, Lahore</span>
