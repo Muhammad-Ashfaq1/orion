@@ -28,11 +28,11 @@
     <link href="{{ asset('assets/css/new-css.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <script type="text/javascript" src="{{ asset('assets/js/memenu.js') }}"></script>
-    <script>
+    <!-- <script>
     $(document).ready(function() {
         $(".memenu").memenu();
     });
-    </script>
+    </script> -->
     <!--dropdown-->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all" />
 
