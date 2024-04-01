@@ -969,7 +969,7 @@ background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%
     margin: 0  !important;
   /* width: 100vw; */
   min-height: 600px;
-  height: 100vh;
+  height: 650px;
   position: relative;
 /*     background: #fd5; */
 }
@@ -1064,7 +1064,7 @@ background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%
 }
 
 .videos{
-    padding: 90px 0 !important;
+    /* padding: 90px 0 !important; */
     background-color: #002147;
     /* border-bottom: 1px solid #fff; */
 }
@@ -1096,7 +1096,32 @@ background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%
     object-fit: cover;
     border-radius: 8px;
 }
+.video-thumbnail-container{
+    
+        height: 505px;
+        overflow: auto;
+}
 
+
+.video-thumbnail-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.video-thumbnail-container::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 1px;
+}
+
+.video-thumbnail-container::-webkit-scrollbar-thumb {
+  background: #005b96;
+  border-radius: 1px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .video-thumbnail-container {
+      scrollbar-color: #005b96 #fff;
+  }
+}
 @media screen and (max-width:768px) {
     .video-thumbnail-container{
         padding: 20px;

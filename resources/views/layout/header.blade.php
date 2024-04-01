@@ -16,7 +16,9 @@
                 <div class="top-nav">
                     <ul class="memenu skyblue">
                         <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="grid"><a href="{{ route('product-list') }}">Products</a>
+                        <li class="grid">
+                            <a href="{{ route('product-list') }}">Products</a>
+    
                             {{--                        <li class="grid"><a href="javascript:void(0)">Products</a>--}}
                             {{--                            <div class="mepanel">--}}
                             {{--                                <div class="row gx-0">--}}
@@ -24,7 +26,8 @@
                             {{--                                        <h4>Indoor lightning &#8250;</h4>--}}
                             {{--                                        <ul>--}}
                             {{--                                            <li><a href="{{ route('product-list') }}">Bulb
-                            5W</a></li>--}}
+                            5W</a>
+                        </li>--}}
                         {{--                                            <li><a href="{{ route('product-list') }}">Bulb
                         13W</a></li>--}}
                         {{--                                            <li><a href="{{ route('product-list') }}">Bulb
@@ -68,6 +71,7 @@
                         {{--                                </div>--}}
                         {{--                            </div>--}}
                         </li>
+                        
                         <li class="grid"><a href="{{ route('projects')}}">Projects</a>
                             {{--                        <li class="grid"><a href="javascript:void(0)">Projects</a>--}}
                             {{--                            <div class="mepanel">--}}
@@ -125,3 +129,5 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('assets/js/new-script.js') }}"></script>

@@ -5,7 +5,7 @@
             <div class="col-md-3 col-12 infor-left">
                 <h3>Follow Us</h3>
                 <ul>
-                    <li><a href="https://www.facebook.com/profile.php?id=100077661672038&mibextid=uzlsIk"><span
+                    <li><a href="https://www.facebook.com/profile.php?id=61557463086278&mibextid=uzlsIk"><span
                                 class="fb"></span>
                             <h6>Facebook</h6>
                         </a></li>
@@ -64,9 +64,8 @@
             </div>
             <div class="col-md-3 col-12 infor-left">
                 <h3>Orion Lighting</h3>
-                <h4>Orion Lights,
-                    <span>LLAL BADSHAH ROAD, Multan Rd, Khanpur, Lahore</span>
-                    Punjab 53710.
+                <h4>ORION LIGHTING PRIVATE LIMITED,
+                    <span>LAL BADSHAH ROAD MULTAN ROAD, KHANPUR, LAHORE</span>
                 </h4>
                 <h5>042 37510711</h5>
                 <p><a href="mailto:example@email.com" style="word-break: break-all;">Orionlightingpvtltd@gmail.com</a>
