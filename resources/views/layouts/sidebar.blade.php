@@ -15,9 +15,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{  route('product.index') }}">
+                    <a class="nav-link" href="{{  url('/product') }}">
                         <i class="fas fa-building"></i>
                         <span>Products</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{  route('warranty.index') }}">
+                        <i class="fas fa-building"></i>
+                        <span>My Warranty</span>
                     </a>
                 </li>
 
