@@ -45,4 +45,8 @@ class HomeController extends Controller
     {
         return view('partials.projects');
     }
+    public function products()
+    {
+        return view('partials.products-group');
+    }
 }

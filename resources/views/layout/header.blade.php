@@ -17,8 +17,40 @@
                     <ul class="memenu skyblue">
                         <li class="active"><a href="{{ route('home') }}">Home</a></li>
                         <li class="grid">
-                            <a href="{{ route('product-list') }}">Products</a>
-    
+                            <a href="{{ route('products') }}" class="products-link">Products</a>
+                            <ul class="product-dropdown">
+                                <li>
+                                    <a href="">Consumer</a>
+                                    <ul class="nestedMenu">
+                                        <li><a href="#">LED Bulbs</a></li>
+                                        <li><a href="#">LED Downlights</a></li>
+                                        <li><a href="#">LED Slim Panel Lights</a></li>
+                                        <li><a href="#">LED Adjustable Panel Lights</a></li>
+                                        <li><a href="#">LED Surface Panel</a></li>
+                                        <li><a href="#">LED COB</a></li>
+                                        <li><a href="#">LED Batten Light</a></li>
+                                        <li><a href="#">LED Tube Light</a></li>
+                                        <!-- Add more submenu items as needed -->
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">Professional</a>
+                                    <ul class="nestedMenu">
+                                        <li><a href="#">LED Street Lights</a></li>
+                                        <li><a href="#">LED Flood Lights</a></li>
+                                        <li><a href="#">LED Highbay Lights</a></li>
+                                        <li><a href="#">LED Panel Lights</a></li>
+                                        <li><a href="#">LED T Series Bulbs</a></li>
+                                        <li><a href="#">LED Spot Lights</a></li>
+                                        <li><a href="#">LED Tube Lights</a></li>
+                                        <li><a href="#">LED Stadium Lights</a></li>
+                                        <li><a href="#">LED Solar Street Lights</a></li>
+                                        <li><a href="#">LED Smart Lighting</a></li>
+                                        <!-- Add more submenu items as needed -->
+                                    </ul>
+                                </li>
+                            </ul>
+
                             {{--                        <li class="grid"><a href="javascript:void(0)">Products</a>--}}
                             {{--                            <div class="mepanel">--}}
                             {{--                                <div class="row gx-0">--}}
@@ -71,7 +103,7 @@
                         {{--                                </div>--}}
                         {{--                            </div>--}}
                         </li>
-                        
+
                         <li class="grid"><a href="{{ route('projects')}}">Projects</a>
                             {{--                        <li class="grid"><a href="javascript:void(0)">Projects</a>--}}
                             {{--                            <div class="mepanel">--}}
@@ -131,3 +163,67 @@
 </div>
 
 <script src="{{ asset('assets/js/new-script.js') }}"></script>
+<script>
+$(document).ready(function() {
+    const productsLink = $('.products-link');
+    const productDropdown = $('.product-dropdown');
+    $(document).on('click', function(event) {
+        const isClickInside = productsLink.is(event.target) || productDropdown.has(event.target)
+            .length > 0;
+        if (!isClickInside) {
+            productDropdown.removeClass('active');
+            closeAllSubmenus();
+        }
+    });
+
+    productDropdown.on('click', function(event) {
+        event.stopPropagation();
+    });
+
+    productDropdown.on('mouseenter', function() {
+        productDropdown.addClass('active');
+    });
+
+
+    productDropdown.on('mouseleave', function(event) {
+        if (!isMouseOverDropdown(event)) {
+            productDropdown.removeClass('active');
+            closeAllSubmenus();
+        }
+    });
+    // nested menu
+    const submenuItems = $('.product-dropdown .nestedMenu');
+    submenuItems.each(function() {
+        const submenu = $(this);
+        const parentItem = submenu.parent();
+        parentItem.on('mouseenter', function() {
+            submenu.css('display', 'block');
+        });
+        parentItem.on('mouseleave', function(event) {
+            if (!isMouseOverElement(event, submenu.get(0))) {
+                submenu.css('display', 'none');
+            }
+        });
+        parentItem.on('click', function(event) {
+            event
+                .stopPropagation();
+        });
+    });
+
+    function closeAllSubmenus() {
+        submenuItems.css('display', 'none');
+    }
+
+    function isMouseOverDropdown(event) {
+        return $(event.relatedTarget).is(productDropdown) || productDropdown.has(event.relatedTarget).length >
+            0;
+    }
+
+    function isMouseOverElement(event, element) {
+        return $(event.relatedTarget).is(element) || $.contains(element, event.relatedTarget);
+    }
+    $('.product-dropdown').find('li').each(function(index) {
+        $(this).css('animation-delay', (index + 1) * 0.02 + 's');
+    });
+});
+</script>

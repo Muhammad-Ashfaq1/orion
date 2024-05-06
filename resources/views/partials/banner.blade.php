@@ -51,38 +51,38 @@
                      </div>
                  </div>
              </div>
-             <div class="swiper-slide">
+             <!-- <div class="swiper-slide">
                  <div class="backdrop"></div>
                  <img src="{{ asset('assets/images/slider1.jpeg') }}" alt="" class="mainImg">
                  <div class="swiper-caption">
                      <div class="row ">
-                         <div class="col-md-6 col-12 ">
-                             <!-- <h1>New Panel Range</h1>
+                         <div class="col-md-6 col-12 "> -->
+             <!-- <h1>New Panel Range</h1>
                              <h3>FIALUX BACKLIT PANEL</h3>
                              <a href="">More Detail</a> -->
-                         </div>
-                         <div class="col-md-6 col-12  text-center">
-                             <!-- <img src="{{ asset('assets/images/orion-40W.jpg') }}" alt="Product 2"> -->
-                         </div>
+             <!-- </div>
+                         <div class="col-md-6 col-12  text-center"> -->
+             <!-- <img src="{{ asset('assets/images/orion-40W.jpg') }}" alt="Product 2"> -->
+             <!-- </div>
                      </div>
                  </div>
-             </div>
-             <div class="swiper-slide">
+             </div> -->
+             <!-- <div class="swiper-slide">
                  <div class="backdrop"></div>
                  <img src="{{ asset('assets/images/slider3.jpeg') }}" alt="" class="mainImg">
                  <div class="swiper-caption">
                      <div class="row ">
-                         <div class="col-md-6 col-12 ">
-                             <!-- <h1>New Panel Range</h1>
+                         <div class="col-md-6 col-12 "> -->
+             <!-- <h1>New Panel Range</h1>
                              <h3>FIALUX BACKLIT PANEL</h3>
                              <a href="">More Detail</a> -->
-                         </div>
-                         <div class="col-md-6 col-12  text-center">
-                             <!-- <img src="{{ asset('assets/images/orion-40W.jpg') }}" alt="Product 2"> -->
-                         </div>
+             <!-- </div>
+                         <div class="col-md-6 col-12  text-center"> -->
+             <!-- <img src="{{ asset('assets/images/orion-40W.jpg') }}" alt="Product 2"> -->
+             <!-- </div>
                      </div>
                  </div>
-             </div>
+             </div> -->
          </div>
          <div class="swiper-button-next"></div>
          <div class="swiper-button-prev"></div>

@@ -1,14 +1,14 @@
 .memenu {
-    margin: 5px 0 0 0;
+    margin: 0px 0 0 0;
     padding: 0;
     width: 100%;
     list-style: none;
-    display: inline-block;
+    /* display: inline-block; */
     position: relative;
     font-size: 15px;
 }
 .memenu li{
-	display:inline-block;
+	display:block;
 }
 .memenu>li>a {
     float: left;
@@ -20,6 +20,7 @@
     -moz-transition: color .4s ease-in-out;
     -webkit-transition: color .4s ease-in-out;
     -o-transition: color .4s ease-in-out;
+	padding: 15px;
 }
 .memenu>li>.mepanel {
 	position: absolute;

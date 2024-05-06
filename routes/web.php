@@ -23,6 +23,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function()
     Route::get('/contact-us', 'contactUs')->name('contact-us');
     Route::get('/login', 'login')->name('login');
     Route::get('/projects', 'projects')->name('projects');
+    Route::get('/products', 'products')->name('products');
 });
 
 Route::controller(\App\Http\Controllers\Admin\ProductController::class)->prefix('/product')->group(function () {
@@ -36,4 +37,3 @@ Route::controller(\App\Http\Controllers\Admin\ProductController::class)->prefix(
 Route::get('/dashboard', function (){
     return view('dashboard');
 })->name('dashboard');
-
