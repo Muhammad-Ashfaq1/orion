@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('warranties', function (Blueprint $table) {
             $table->id();
-            $table->date('start_date')->default()->today();
+            $table->date('start_date')->default(now());
             $table->date('end_date');
             $table->string('company_tag');
             $table->softDeletes();

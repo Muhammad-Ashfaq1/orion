@@ -34,7 +34,6 @@ Route::controller(\App\Http\Controllers\Admin\ProductController::class)->prefix(
     Route::get('get-all-product-type', 'getAllProductType')->name('product.delete');
 });
 
-
 Route::controller(\App\Http\Controllers\Admin\WarrantyController::class)->prefix('/warranty')->group(function () {
     Route::get('/', 'getAllWarranties')->name('warranty.index');
     Route::post('/add', 'store')->name('warranty.store');

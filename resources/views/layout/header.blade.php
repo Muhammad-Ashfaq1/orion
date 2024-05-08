@@ -143,9 +143,6 @@
 
                         </li>
                         <li class="grid"><a href="{{ route('support') }}">Support</a>
-                            {{--                        </li>--}}
-                            {{--                        <li class="grid"><a href="{{ route('login') }}">Login</a>--}}
-                            {{--                        </li>--}}
                     </ul>
                 </div>
                 <div class="clearfix"> </div>

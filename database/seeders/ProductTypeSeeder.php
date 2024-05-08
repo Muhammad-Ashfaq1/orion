@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\ProductType;
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProductTypeSeeder extends Seeder
@@ -14,19 +12,45 @@ class ProductTypeSeeder extends Seeder
      */
     public function run()
     {
-        $now = Carbon::now();
+        $now = now();
 
-        $productTypes = [
-            ['type_name' => 'Downlight', 'created_at' => $now, 'updated_at' => $now],
-            ['type_name' => 'Floodlight', 'created_at' => $now, 'updated_at' => $now],
-            ['type_name' => 'Panel Light', 'created_at' => $now, 'updated_at' => $now],
-            ['type_name' => 'Ice Downlight', 'created_at' => $now, 'updated_at' => $now],
+        // Seed types for category id 1 (Consumer)
+        $consumerTypes = [
+            'LED Bulbs',
+            'LED Downlights',
+            'LED Slim Panel Lights',
+            'LED Adjustable Panel Lights',
+            'LED Surface Panel',
+            'LED COB',
+            'LED Batten Light',
+            'LED Tube Light'
         ];
 
-        foreach ($productTypes as $productType) {
+        foreach ($consumerTypes as $type) {
             ProductType::updateOrCreate(
-                ['type_name' => $productType['type_name']],
-                $productType
+                ['type_name' => $type],
+                ['product_category_id' => 1, 'created_at' => $now, 'updated_at' => $now]
+            );
+        }
+
+        // Seed types for category id 2 (Professional)
+        $professionalTypes = [
+            'LED Street Lights',
+            'LED Flood Lights',
+            'LED Highbay Lights',
+            'LED Panel Lights',
+            'LED T Series Bulbs',
+            'LED Spot Lights',
+            'LED Tube Lights',
+            'LED Stadium Lights',
+            'LED Solar Street Lights',
+            'LED Smart Lighting'
+        ];
+
+        foreach ($professionalTypes as $type) {
+            ProductType::updateOrCreate(
+                ['type_name' => $type],
+                ['product_category_id' => 2, 'created_at' => $now, 'updated_at' => $now]
             );
         }
     }
