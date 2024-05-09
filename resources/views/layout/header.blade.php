@@ -20,7 +20,7 @@
                             <a href="{{ route('products') }}" class="products-link">Products</a>
                             <ul class="product-dropdown">
                                 <li>
-                                    <a href="">Consumer</a>
+                                    <a href="{{ route('consumer') }}">Consumer</a>
                                     <ul class="nestedMenu">
                                         <li><a href="#">LED Bulbs</a></li>
                                         <li><a href="#">LED Downlights</a></li>
@@ -34,7 +34,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="">Professional</a>
+                                    <a href="{{ route('professional') }}">Professional</a>
                                     <ul class="nestedMenu">
                                         <li><a href="#">LED Street Lights</a></li>
                                         <li><a href="#">LED Flood Lights</a></li>

@@ -24,6 +24,8 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function()
     Route::get('/login', 'login')->name('login');
     Route::get('/projects', 'projects')->name('projects');
     Route::get('/products', 'products')->name('products');
+    Route::get('/products/consumer', 'consumer')->name('consumer');
+    Route::get('/products/professional', 'professional')->name('professional');
 });
 
 Route::controller(\App\Http\Controllers\Admin\ProductController::class)->prefix('/product')->group(function () {

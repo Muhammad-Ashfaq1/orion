@@ -7,26 +7,26 @@
         <div class="row flex-wrap justify-content-center">
             <div class="col-md-6 col-12">
                 <div class="content-products">
-                    <h1 class="heading">
-                        Consumer
-                    </h1>
-                    <div class="content-products-img">
-                        <a href="">
+                    <a href="{{ route('consumer') }}">
+                        <h1 class="heading">
+                            Consumer
+                        </h1>
+                        <div class="content-products-img">
                             <img src="{{ asset('assets/images/consumer.webp') }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="col-md-6 col-12">
                 <div class="content-products">
-                    <h1 class="heading">
-                        Professional
-                    </h1>
-                    <div class="content-products-img">
-                        <a href="">
+                    <a href="{{ route('professional') }}">
+                        <h1 class="heading">
+                            Professional
+                        </h1>
+                        <div class="content-products-img">
                             <img src="{{ asset('assets/images/professional.jpg') }}" alt="" class="img-fluid">
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

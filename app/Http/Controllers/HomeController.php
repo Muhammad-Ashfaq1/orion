@@ -49,4 +49,12 @@ class HomeController extends Controller
     {
         return view('partials.products-group');
     }
+    public function consumer()
+    {
+        return view('partials.consumer');
+    }
+    public function professional()
+    {
+        return view('partials.professional');
+    }
 }
