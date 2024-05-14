@@ -124,9 +124,6 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-12 text-center">
-                    <img src="{{ asset('assets/images/image26.png') }}" alt="">
-                </div>
             </div>
         </section>
     </div>
