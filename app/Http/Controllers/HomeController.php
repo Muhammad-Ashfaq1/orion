@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductCategory;
+use App\Models\ProductType;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -51,10 +53,12 @@ class HomeController extends Controller
     }
     public function consumer()
     {
-        return view('partials.consumer');
+        $products = ProductType::where('product_category_id',ProductType::CONSUMER_TYPE)->get();
+        return view('partials.consumer', compact('products'));
     }
     public function professional()
     {
-        return view('partials.professional');
+        $products = ProductType::where('product_category_id',ProductType::PROFESSIONAL_TYPE)->get();
+        return view('partials.professional', compact('products'));
     }
 }
