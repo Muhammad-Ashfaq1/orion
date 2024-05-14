@@ -48,7 +48,7 @@
                             <h5 class="modal-title mt-0" id="myModalLabel">Add New Product</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
-                        <form id="js-product-form" enctype="multipart/form-data">
+                        <form id="js-product-form" enctype="multipart/form-data" action="{{ route('product.store') }}" method="POST">
                             <input type="hidden" name="id" id="product-id" value="">
                             @csrf
                             <div class="modal-body">
@@ -60,75 +60,79 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">LED Chips</label>
-                                        <input type="text" class="form-control solid" name="led_chips" placeholder="Enter LED Chips" required>
+                                        <label class="form-label required">Model</label>
+                                        <input type="text" class="form-control solid" name="product_model" placeholder="Model Name" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Light Efficiency</label>
-                                        <input type="text" class="form-control solid" name="light_efficiency" placeholder="Enter Light Efficiency" required>
+                                        <label class="form-label required">Wattage</label>
+                                        <input type="number" class="form-control solid" name="wattage" placeholder="Enter Wattage" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Color Temperature</label>
-                                        <input type="text" class="form-control solid" name="color_temperature" placeholder="Enter Color Temperature" required>
+                                        <label class="form-label required">Initial Lumen</label>
+                                        <input type="number" class="form-control solid" name="initial_lumen" placeholder="Enter Initial Lumen" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Color Rendering Index</label>
-                                        <input type="text" class="form-control solid" name="color_rendering_index" placeholder="Enter Color Rendering Index" required>
+                                        <label class="form-label required">Stable Lumen</label>
+                                        <input type="number" class="form-control solid" name="stable_lumen" placeholder="Enter Stable Lumen" required>
+                                    </div>
+                                    <div class="col-md-6 p-3">
+                                        <label class="form-label required">RA</label>
+                                        <input type="number" class="form-control solid" name="ra" placeholder="Enter RA" required>
                                     </div>
                                     <div class="col-md-6 p-3">
                                         <label class="form-label required">Beam Angle</label>
-                                        <input type="text" class="form-control solid" name="beam_angle" placeholder="Enter Beam Angle" required>
+                                        <input type="number" class="form-control solid" name="beam_angle" placeholder="Enter Beam Angle" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Fixture Size</label>
-                                        <input type="text" class="form-control solid" name="fixture_size" placeholder="Enter Fixture Size" required>
+                                        <label class="form-label required">Life</label>
+                                        <input type="number" class="form-control solid" name="life_hours" placeholder="Enter Life Hours" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Fixture Material</label>
-                                        <input type="text" class="form-control solid" name="fixture_material" placeholder="Enter Fixture Material" required>
+                                        <label class="form-label required">Guarantee</label>
+                                        <input type="number" class="form-control solid" name="guarantee" placeholder="Enter Guarantee years" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Fixture Color</label>
-                                        <input type="text" class="form-control solid" name="fixture_color" placeholder="Enter Fixture Color" required>
+                                        <label class="form-label required">Lamp Size H1</label>
+                                        <input type="number" class="form-control solid" name="lamp_size_h1" placeholder="Enter Lamp Size H1" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Driver Mode</label>
-                                        <input type="text" class="form-control solid" name="driver_mode" placeholder="Enter Driver Mode" required>
+                                        <label class="form-label required">Lamp Size H2</label>
+                                        <input type="text" class="form-control solid" name="lamp_size_h2" placeholder="Enter Lamp Size H2" required>
                                     </div>
                                     <div class="col-md-6 p-3">
-                                        <label class="form-label required">Voltage</label>
-                                        <input type="text" class="form-control solid" name="voltage" placeholder="Enter Voltage" required>
+                                        <label class="form-label required">Lamp Size D</label>
+                                        <input type="text" class="form-control solid" name="lamp_size_d" placeholder="Enter Lamp Size D" required>
                                     </div>
-                                    <div class="col-md-6 p-3">
-                                        <label class="form-label required">Life Span</label>
-                                        <input type="text" class="form-control solid" name="life_span" placeholder="Enter Life Span" required>
-                                    </div>
-                                    <div class="col-md-6 p-3">
-                                        <label class="form-label required">Warranty</label>
-                                        <input type="text" class="form-control solid" name="warranty" placeholder="Enter Warranty" required>
-                                    </div>
-                                    <div class="col-md-6 p-3">
-                                        <label class="form-label required">Certification</label>
-                                        <input type="text" class="form-control solid" name="certification" placeholder="Enter Certification" required>
-                                    </div>
-                                    <div class="col-md-6 p-3">
-                                        <label class="form-label required">OEM & ODM Service</label>
-                                        <input type="text" class="form-control solid" name="oem_odm_service" placeholder="Enter OEM & ODM Service" required>
-                                    </div>
-                                    <div class="col-md-6 p-3">
-                                        <label class="form-label required">Packing</label>
-                                        <input type="text" class="form-control solid" name="packing" placeholder="Enter Packing" required>
-                                    </div>
-                                    <div class="col-md-6 p-3">
-                                        <label class="form-label">Free Samples</label>
-                                        <select class="form-control solid" name="free_samples">
-                                            <option value="Offered" selected>Offered</option>
-                                            <option value="Not Offered">Not Offered</option>
-                                        </select>
-                                    </div>
+{{--                                    <div class="col-md-6 p-3">--}}
+{{--                                        <label class="form-label required">Life Span</label>--}}
+{{--                                        <input type="text" class="form-control solid" name="life_span" placeholder="Enter Life Span" required>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-6 p-3">--}}
+{{--                                        <label class="form-label required">Warranty</label>--}}
+{{--                                        <input type="text" class="form-control solid" name="warranty" placeholder="Enter Warranty" required>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-6 p-3">--}}
+{{--                                        <label class="form-label required">Certification</label>--}}
+{{--                                        <input type="text" class="form-control solid" name="certification" placeholder="Enter Certification" required>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-6 p-3">--}}
+{{--                                        <label class="form-label required">OEM & ODM Service</label>--}}
+{{--                                        <input type="text" class="form-control solid" name="oem_odm_service" placeholder="Enter OEM & ODM Service" required>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-6 p-3">--}}
+{{--                                        <label class="form-label required">Packing</label>--}}
+{{--                                        <input type="text" class="form-control solid" name="packing" placeholder="Enter Packing" required>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-6 p-3">--}}
+{{--                                        <label class="form-label">Free Samples</label>--}}
+{{--                                        <select class="form-control solid" name="free_samples">--}}
+{{--                                            <option value="Offered" selected>Offered</option>--}}
+{{--                                            <option value="Not Offered">Not Offered</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                     <div class="col-md-6 p-3">
                                         <label class="form-label required">Image</label>
-                                        <input type="file" class="form-control-file" name="image" required>
+                                        <input type="file" class="form-control-file" name="image_url" required>
                                     </div>
                                 </div>
                             </div>

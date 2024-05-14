@@ -29,7 +29,7 @@ class ProductController extends Controller{
     {
 
         $product = Product::updateOrCreate(
-            ['id' => @$request->id], $request->validated());
+            ['id' => @$request->id], $request->all());
         return $product;
 
     }
