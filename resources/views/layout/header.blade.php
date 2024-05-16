@@ -22,31 +22,17 @@
                                 <li>
                                     <a href="{{ route('consumer') }}">Consumer</a>
                                     <ul class="nestedMenu">
-                                        <li><a href="#">LED Bulbs</a></li>
-                                        <li><a href="#">LED Downlights</a></li>
-                                        <li><a href="#">LED Slim Panel Lights</a></li>
-                                        <li><a href="#">LED Adjustable Panel Lights</a></li>
-                                        <li><a href="#">LED Surface Panel</a></li>
-                                        <li><a href="#">LED COB</a></li>
-                                        <li><a href="#">LED Batten Light</a></li>
-                                        <li><a href="#">LED Tube Light</a></li>
-                                        <!-- Add more submenu items as needed -->
+                                        @foreach(@$consumerCategories ?? [] as $category)
+                                            <li><a href="#">{{ @$category->type_name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="{{ route('professional') }}">Professional</a>
                                     <ul class="nestedMenu">
-                                        <li><a href="#">LED Street Lights</a></li>
-                                        <li><a href="#">LED Flood Lights</a></li>
-                                        <li><a href="#">LED Highbay Lights</a></li>
-                                        <li><a href="#">LED Panel Lights</a></li>
-                                        <li><a href="#">LED T Series Bulbs</a></li>
-                                        <li><a href="#">LED Spot Lights</a></li>
-                                        <li><a href="#">LED Tube Lights</a></li>
-                                        <li><a href="#">LED Stadium Lights</a></li>
-                                        <li><a href="#">LED Solar Street Lights</a></li>
-                                        <li><a href="#">LED Smart Lighting</a></li>
-                                        <!-- Add more submenu items as needed -->
+                                        @foreach(@$professionalCategories ?? [] as $category)
+                                            <li><a href="#">{{ @$category->type_name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                             </ul>

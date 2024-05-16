@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_type_id');
             $table->string('product_model')->nullable();
+            $table->string('shape')->nullable();
             $table->integer('wattage')->nullable();
             $table->integer('initial_lumen')->nullable();
             $table->integer('stable_lumen')->nullable();
@@ -23,8 +24,14 @@ return new class extends Migration
             $table->integer('life_hours')->nullable();
             $table->integer('guarantee')->nullable();
             $table->integer('lamp_size_h1')->nullable();
-            $table->string('lamp_size_h2')->nullable();
-            $table->string('lamp_size_d')->nullable();
+            $table->integer('lamp_size_h2')->nullable();
+            $table->integer('lamp_size_d')->nullable();
+            $table->float('inches')->nullable();
+            $table->integer('d_round')->nullable();
+            $table->integer('d_square')->nullable();
+            $table->integer('cut_square')->nullable();
+            $table->integer('cut_round')->nullable();
+            $table->integer('h')->nullable();
             $table->foreign('product_type_id')->references('id')->on('product_types')->onDelete('cascade')->onUpdate('cascade');
             $table->softDeletes();
             $table->string('image_url')->nullable();

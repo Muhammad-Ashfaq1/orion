@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\ProductType;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,8 +19,12 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+        $consumerCategories = ProductType::where('product_category_id', ProductType::CONSUMER_TYPE)->get();
+        $professionalCategories = ProductType::where('product_category_id', ProductType::PROFESSIONAL_TYPE)->get();
+
+        View::share('consumerCategories', $consumerCategories);
+        View::share('professionalCategories', $professionalCategories);
     }
 }

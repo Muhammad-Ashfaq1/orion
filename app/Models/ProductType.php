@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class ProductType extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $fillable = ['type_name', 'image_url'];
+    protected $fillable = ['type_name', 'image_url' , 'product_category_id'];
 
     const CONSUMER_TYPE = '1';
     const PROFESSIONAL_TYPE = '2';
@@ -22,4 +22,6 @@ class ProductType extends Model
 //        }
 //        return null;
 //    }
+
+
 }

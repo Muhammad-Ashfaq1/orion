@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\FileUploadManager;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductType;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller{
     public function index()
     {
-        $products = Product::orderByDesc('created_at')->get();
+        $products = Product::with('productType')->orderByDesc('created_at')->get();
         return view('product.index', compact('products'));
     }
 
@@ -28,10 +29,12 @@ class ProductController extends Controller{
     public function store(Request $request)
     {
 
-        $product = Product::updateOrCreate(
-            ['id' => @$request->id], $request->all());
-        return $product;
-
+        $data = $request->all();
+        if ($request->hasFile('image_url')) {
+            $brochure = FileUploadManager::uploadFile($request->file('image_url'), 'public/images/products/');
+            $data['image_url'] = $brochure['doc_name'];
+        }
+        return Product::updateOrCreate(['id' => $data['id']],$data);
     }
 
     public function  edit(Request $request, $id)

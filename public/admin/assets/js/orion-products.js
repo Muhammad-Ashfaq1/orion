@@ -4,6 +4,37 @@ $(document).on('click', '.js-add-product', function (el) {
     getAllProductType();
 });
 
+$('#js-product-form').validate({
+    submitHandler: function (form) {
+        event.preventDefault();
+        var formData = new FormData($('#js-product-form')[0]);
+        $.ajax({
+            url: '/product/add',
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Accept', 'application/json');
+                xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+            },
+            success: function (data) {
+                console.log('success');
+                $('#js-add-asset-type-modal').modal('hide');
+                $('#js-product-form')[0].reset();
+                toastr.success('asset-type saved successfully');
+                location.reload();
+            },
+            error: function (xhr, status, error) {
+                handleAjaxError(xhr);
+            },
+            complete: function () {
+                // disableModalButton('submit-program-btn', false);
+            }
+        });
+    }
+});
 
 
 function getAllProductType() {
@@ -32,50 +63,7 @@ function getAllProductType() {
 }
 
 // add new asset-type
-$('#js-asset-type-Form').validate({
-    rules: {
-        name: {
-            required: true,
-        },
-    },
-    messages: {
-        name: {
-            required: "Asset type name is required",
-        },
-    },
 
-    submitHandler: function (form) {
-        event.preventDefault();
-        var formData = new FormData($('#js-asset-type-Form')[0]);
-        $.ajax({
-            url: '/admin/asset-type/add',
-            type: 'POST',
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Accept', 'application/json');
-                xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
-                // disableModalButton('submit-program-btn');
-            },
-            success: function (data) {
-                console.log('success');
-                $('#js-add-asset-type-modal').modal('hide');
-                $('#js-asset-type-Form')[0].reset();
-                $('#asset-type-id').val("");
-                toastr.success('asset-type saved successfully');
-                location.reload();
-            },
-            error: function (xhr, status, error) {
-                handleAjaxError(xhr);
-            },
-            complete: function () {
-                // disableModalButton('submit-program-btn', false);
-            }
-        });
-    }
-});
 
 
 

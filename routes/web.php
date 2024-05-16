@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\WarrantyController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::controller(\App\Http\Controllers\HomeController::class)->group(function(){
+Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('home');
     Route::get('/about-us', 'aboutUs')->name('about-us');
     Route::get('/product-list', 'productList')->name('product-list');
@@ -28,15 +31,15 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function()
     Route::get('/products/professional', 'professional')->name('professional');
 });
 
-Route::controller(\App\Http\Controllers\Admin\ProductController::class)->prefix('/product')->group(function () {
+Route::controller(ProductController::class)->prefix('product')->group(function () {
     Route::get('/', 'index')->name('my-product.index');
-    Route::post('/add', 'store')->name('product.store');
+    Route::post('/add', 'store')->name('product.add');
     Route::get('/edit/{id}','edit')->name('product.edit');
     Route::delete('delete/{id}', 'delete')->name('product.delete');
     Route::get('get-all-product-type', 'getAllProductType')->name('product.delete');
 });
 
-Route::controller(\App\Http\Controllers\Admin\WarrantyController::class)->prefix('/warranty')->group(function () {
+Route::controller(WarrantyController::class)->prefix('/warranty')->group(function () {
     Route::get('/', 'getAllWarranties')->name('warranty.index');
     Route::post('/add', 'store')->name('warranty.store');
     Route::get('/edit/{id}','edit')->name('warranty.edit');

@@ -15,7 +15,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{  url('/product') }}">
+                    <a class="nav-link" href="{{  route('my-product.index') }}">
                         <i class="fas fa-building"></i>
                         <span>Products</span>
                     </a>
