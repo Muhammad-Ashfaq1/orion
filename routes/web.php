@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('home');
     Route::get('/about-us', 'aboutUs')->name('about-us');
-    Route::get('/product-list', 'productList')->name('product-list');
+    Route::get('/product-list/{id?}', 'productList')->name('product-list');
     Route::get('/single-product', 'singleProduct')->name('single-product');
     Route::get('/support', 'support')->name('support');
     Route::get('/contact-us', 'contactUs')->name('contact-us');

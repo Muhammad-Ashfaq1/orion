@@ -37,12 +37,12 @@ class ProductController extends Controller{
         return Product::updateOrCreate(['id' => $data['id']],$data);
     }
 
-    public function  edit(Request $request, $id)
+    public function edit(Request $request, $id)
     {
         $product = Product::findOrFail($id);
         return $product;
     }
-    public function  delete($id)
+    public function delete($id)
     {
         $product =  Product::findOrFail($id);
         if($product){

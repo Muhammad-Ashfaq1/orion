@@ -23,7 +23,7 @@
                                     <a href="{{ route('consumer') }}">Consumer</a>
                                     <ul class="nestedMenu">
                                         @foreach(@$consumerCategories ?? [] as $category)
-                                            <li><a href="#">{{ @$category->type_name }}</a></li>
+                                            <li><a href="{{ route('product-list', ['id' => $category->id]) }}">{{ $category->type_name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
@@ -31,7 +31,7 @@
                                     <a href="{{ route('professional') }}">Professional</a>
                                     <ul class="nestedMenu">
                                         @foreach(@$professionalCategories ?? [] as $category)
-                                            <li><a href="#">{{ @$category->type_name }}</a></li>
+                                            <li><a href="{{ route('product-list', ['id' => $category->id]) }}">{{ $category->type_name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>

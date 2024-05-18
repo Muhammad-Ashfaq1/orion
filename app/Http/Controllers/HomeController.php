@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
@@ -18,9 +19,24 @@ class HomeController extends Controller
         return view('partials.about-us');
     }
 
-    public function productList()
+    public function productList(Request $request , $id = null)
     {
-        return view('partials.product-list');
+
+        if ($id) {
+            // Fetch products of the specific type
+            $products = Product::with('productType')->where('product_type_id',$id)->get();
+        } else {
+            // Fetch all products
+            $products = Product::with('productType')->get();
+        }
+
+        // If the request is AJAX, return a partial view or JSON response
+        if ($request->ajax()) {
+            return view('partials.product-data-table', compact('products'))->render();
+        }
+
+        // Otherwise, return the full view
+        return view('partials.product-list', compact('products'));
     }
 
     public function singleProduct()

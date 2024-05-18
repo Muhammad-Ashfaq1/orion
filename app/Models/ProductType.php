@@ -15,6 +15,11 @@ class ProductType extends Model
     const CONSUMER_TYPE = '1';
     const PROFESSIONAL_TYPE = '2';
 
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'product_type_id');
+    }
+
 //    public function getImageUrlAttribute($value)
 //    {
 //        if ($value) {
