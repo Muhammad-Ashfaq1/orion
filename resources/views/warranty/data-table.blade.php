@@ -2,8 +2,10 @@
     @foreach ($warranties as $warranty)
         <tr>
             <td>{{ @$loop->index + 1}}</td>
+            <td>{{ @$loop->index + 1}}</td>
             <td>{{ @$warranty->start_date}}</td>
             <td>{{ @$warranty->end_date ?? ' - '}}</td>
+            <td>{{ @$warranty->image_path ?? ' - '}}</td>
             <td>{{ @$warranty->image_path ?? ' - '}}</td>
             <td>
                 <div class="action-buttons d-flex justify-content-center position-relative">

@@ -24,7 +24,8 @@ class WarrantyRequest extends FormRequest
         return [
             'start_date' => 'required|date',
             'end_date' => 'required|date',
-            'company_tag' => 'required|starts_with:https',
+            'product_type_id' => 'required|exists:product_types,id',
+            'warranty_name' => 'required'
         ];
     }
 }

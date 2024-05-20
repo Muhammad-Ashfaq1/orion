@@ -18,8 +18,10 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Start Entry</th>
-                            <th>Date Of Expiry</th>
+                            <th>Product Type</th>
+                            <th>Warranty Name</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
                             <th>QR-Code</th>
                             <th>Actions</th>
                         </tr>
@@ -45,13 +47,33 @@
                             </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
-                        <form id="js-warranty-Form" enctype="multipart/form-data" >
+                        <form id="js-warranty-Form" enctype="multipart/form-data" action="{{ route('warranty.store') }}" method="POST">
                             <input type="hidden" name="id" id="warranty-id" value="">
                             @csrf
-                            <div class="form-group p-3">
-                                <label class="form-label required" for="warranty-name">warranty Name</label>
-                                <input type="text" class="form-control solid" id="warranty-name" name="name" placeholder="Enter warranty name">
+                            <div class="row p-3">
+                                <div class="col-md-6 p-3">
+                                    <label class="form-label required">Product Type</label>
+                                    <select class="form-control solid" name="product_type_id" id="js-product-type-name-dropdown" required>
+                                        <option value="">Select Product Type</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 p-3">
+                                    <label class="form-label required" for="warranty-name">Warranty Name</label>
+                                    <input type="text" class="form-control solid" id="warranty-name" name="warranty_name" placeholder="Enter warranty name" minlength="3">
+                                </div>
+
+                                <div class="col-md-6 p-3">
+                                    <label class="form-label required" for="warranty-name">Warranty Start Date</label>
+                                    <input type="date" class="form-control solid" id="warranty-name" name="start_date" required>
+                                </div>
+
+                                <div class="col-md-6 p-3">
+                                    <label class="form-label required" for="warranty-name">Warranty End Date</label>
+                                    <input type="date" class="form-control solid" id="warranty-name" name="end_date" required>
+                                </div>
                             </div>
+
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
@@ -72,5 +94,5 @@
 @endsection
 
 @section('extra-js')
-    <script src="{{asset('assets/js/admin-warranty.js')}}"></script>
+    <script src="{{asset('admin/assets/js/admin-warranty.js')}}"></script>
 @endsection

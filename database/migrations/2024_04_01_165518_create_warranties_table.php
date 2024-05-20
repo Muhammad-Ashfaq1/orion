@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('warranties', function (Blueprint $table) {
             $table->id();
+            $table->string('warranty_name');
+            $table->foreignId('product_type_id')->constrained();
             $table->date('start_date')->default(now());
             $table->date('end_date');
-            $table->string('company_tag');
+            $table->string('image_url')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

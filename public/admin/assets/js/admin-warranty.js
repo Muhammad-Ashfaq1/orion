@@ -1,29 +1,19 @@
 
-$(document).on('click', '.js-add-designation', function (el) {
-    $('#js-add-designation-modal').modal('show');
-    $('#js-designation-Form')[0].reset();
+$(document).on('click', '.js-add-warranty', function (el) {
+    $('#js-add-warranty-modal').modal('show');
+    getAllProductType();
+    $('#js-warranty-Form')[0].reset();
 });
 
 
 
-// add new designation
-$('#js-designation-Form').validate({
-    rules: {
-        designation: {
-            required: true,
-        },
-    },
-    messages: {
-        designation: {
-            required: "designation name is required",
-        },
-    },
-
+// add new warranty
+$('#js-warranty-Form').validate({
     submitHandler: function (form) {
         event.preventDefault();
-        var formData = new FormData($('#js-designation-Form')[0]);
+        var formData = new FormData($('#js-warranty-Form')[0]);
         $.ajax({
-            url: '/admin/designation/add',
+            url: '/warranty/add',
             type: 'POST',
             data: formData,
             cache: false,
@@ -36,10 +26,10 @@ $('#js-designation-Form').validate({
             },
             success: function (data) {
                 console.log('success');
-                $('#js-add-designation-modal').modal('hide');
-                $('#js-designation-Form')[0].reset();
-                $('#designation-id').val("");
-                toastr.success('designation saved successfully');
+                $('#js-add-warranty-modal').modal('hide');
+                $('#js-warranty-Form')[0].reset();
+                $('#warranty-id').val("");
+                toastr.success('warranty saved successfully');
                 location.reload();
             },
             error: function (xhr, status, error) {
@@ -54,22 +44,22 @@ $('#js-designation-Form').validate({
 
 
 
-//edit designation
-$(document).on('click', '.js-edit-designation', function (el) {
+//edit warranty
+$(document).on('click', '.js-edit-warranty', function (el) {
     var depId = $(this).data('id');
-    $('.modal-title').text('Edit designation');
-    $('#js-add-designation-modal').modal('hide');
+    $('.modal-title').text('Edit warranty');
+    $('#js-add-warranty-modal').modal('hide');
     $.ajax({
-        url: '/admin/designation/edit/' + depId,
+        url: '/admin/warranty/edit/' + depId,
         method: 'GET',
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Accept', 'application/json');
             xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
         },
         success: function (data) {
-            $('#js-add-designation-modal').modal('show');
-            $('#designation-name').val(data.designation);
-            $('#designation-id').val(depId);
+            $('#js-add-warranty-modal').modal('show');
+            $('#warranty-name').val(data.warranty);
+            $('#warranty-id').val(depId);
         },
         error: function (xhr, status, error) {
             console.error(xhr.responseText);
@@ -83,12 +73,12 @@ $(document).on('click', '.js-edit-designation', function (el) {
 
 
 //delete deepartment
-$(document).on('click', '.js-delete-designation', function (el) {
+$(document).on('click', '.js-delete-warranty', function (el) {
     let deptId = $(this).data('id');
     showDeleteAlert(function (isConfirmed) {
         if (isConfirmed) {
             $.ajax({
-                url: '/admin/designation/delete/' + deptId,
+                url: '/admin/warranty/delete/' + deptId,
                 method: 'DELETE',
                 async: false,
                 beforeSend: function (xhr) {
@@ -96,7 +86,7 @@ $(document).on('click', '.js-delete-designation', function (el) {
                     xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
                 },
                 success: function (response) {
-                    toastr.success("designation deleted successfully!");
+                    toastr.success("warranty deleted successfully!");
                     location.reload();
                 },
                 error: function (xhr, status, error) {
@@ -140,3 +130,30 @@ function showSuccessAlert() {
         confirmButtonText: "Ok",
     });
 }
+
+
+function getAllProductType() {
+    $.ajax({
+        url: '/product/get-all-product-type',
+        method: 'GET',
+        dataType: 'json',
+        async: false,
+        success: async function (data) {
+            $('#js-product-type-name-dropdown').empty();
+            $('#js-product-type-name-dropdown').append('<option value="">Choose...</option>');
+            if (Array.isArray(data)) {
+                $.each(data, function (index, value) {
+                    $('#js-product-type-name-dropdown').append(
+                        '<option value="' + value.id + '">' + value.type_name + '</option>');
+                });
+            } else if (typeof data === 'object') {
+                $('#js-product-type-name-dropdown').append('<option value="' + data.id + '">' + value.type_name + '</option>');
+            }
+
+        },
+        error: function (xhr, status, error) {
+            console.error('Error fetching data:', error);
+        }
+    });
+}
+

@@ -58,89 +58,97 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="model-name-container">
                                         <label class="form-label required">Model</label>
                                         <input type="text" class="form-control solid" name="product_model" placeholder="Model Name" required>
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="shape-container">
                                         <label class="form-label">Shape</label>
                                         <input type="text" class="form-control solid" name="shape" placeholder="Model Name">
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="inch-container">
                                         <label class="form-label">Inch</label>
                                         <input type="number" class="form-control solid" name="inches" placeholder="Model Name" step="0.01">
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="wattage-container">
                                         <label class="form-label required">Wattage</label>
                                         <input type="number" class="form-control solid" name="wattage" placeholder="Enter Wattage" required>
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="initial-lumen-container">
                                         <label class="form-label required">Initial Lumen</label>
                                         <input type="number" class="form-control solid" name="initial_lumen" placeholder="Enter Initial Lumen" required>
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="stable-lumen-container">
                                         <label class="form-label required">Stable Lumen</label>
                                         <input type="number" class="form-control solid" name="stable_lumen" placeholder="Enter Stable Lumen" required>
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="ra-container">
                                         <label class="form-label">RA</label>
                                         <input type="number" class="form-control solid" name="ra" placeholder="Enter RA">
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="beam-angle-container">
                                         <label class="form-label">Beam Angle</label>
                                         <input type="number" class="form-control solid" name="beam_angle" placeholder="Enter Beam Angle">
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="life-container">
                                         <label class="form-label required">Life</label>
                                         <input type="number" class="form-control solid" name="life_hours" placeholder="Enter Life Hours" required>
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="guarantee-container">
                                         <label class="form-label required">Guarantee</label>
                                         <input type="number" class="form-control solid" name="guarantee" placeholder="Enter Guarantee years" required>
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="d-round-container">
                                         <label class="form-label">D Round</label>
                                         <input type="number" class="form-control solid" name="d_round" placeholder="Model Name">
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="d-square-container">
                                         <label class="form-label">D Square</label>
                                         <input type="number" class="form-control solid" name="d_square" placeholder="Model Name">
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="cut-round-container">
                                         <label class="form-label">Cut Round</label>
                                         <input type="number" class="form-control solid" name="cut_round" placeholder="Model Name">
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="cut-square-container">
                                         <label class="form-label">Cut Square</label>
                                         <input type="number" class="form-control solid" name="cut_square" placeholder="Model Name">
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="h-container">
                                         <label class="form-label">H</label>
                                         <input type="number" class="form-control solid" name="h" placeholder="Model Name">
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="lamp-size-h1-container">
                                         <label class="form-label">Lamp Size H1</label>
                                         <input type="number" class="form-control solid" name="lamp_size_h1" placeholder="Enter Lamp Size H1" required>
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="lamp-size-h2-container">
                                         <label class="form-label">Lamp Size H2</label>
                                         <input type="number" class="form-control solid" name="lamp_size_h2" placeholder="Enter Lamp Size H2" required>
                                     </div>
-                                    <div class="col-md-6 p-3">
+
+                                    <div class="col-md-6 p-3" id="lamp-size-d-container">
                                         <label class="form-label">Lamp Size D</label>
                                         <input type="number" class="form-control solid" name="lamp_size_d" placeholder="Enter Lamp Size D" required>
                                     </div>
 
-                                    <div class="col-md-6 p-3">
+                                    <div class="col-md-6 p-3" id="image-url-container">
                                         <label class="form-label required">Image</label>
                                         <input type="file" class="form-control-file" name="image_url" required accept="image/*">
                                     </div>
