@@ -95,64 +95,68 @@
 //
 //
 //
-// //delete deepartment
-// $(document).on('click', '.js-delete-asset-type', function (el) {
-//     let deptId = $(this).data('id');
-//     showDeleteAlert(function (isConfirmed) {
-//         if (isConfirmed) {
-//             $.ajax({
-//                 url: '/admin/asset-type/delete/' + deptId,
-//                 method: 'DELETE',
-//                 async: false,
-//                 beforeSend: function (xhr) {
-//                     xhr.setRequestHeader('Accept', 'application/json');
-//                     xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
-//                 },
-//                 success: function (response) {
-//                     toastr.success("Asset type deleted successfully!");
-//                     location.reload();
-//                 },
-//                 error: function (xhr, status, error) {
-//                     let errorMessage = "Error deleting the record.";
-//                     if (xhr.responseJSON && xhr.responseJSON.message) {
-//                         errorMessage = xhr.responseJSON.message;
-//                     }
-//                     toastr.error(errorMessage);
-//                     console.error(xhr.responseText);
-//                 }
-//             });
-//         }
-//     });
-// });
-//
-// function showDeleteAlert(callback, message = null , title = null) {
-//     Swal.fire({
-//         title: title ?? "Are you sure to delete?",
-//         text: message ?? "You will not be able to recover this!!",
-//         icon: "warning",
-//         showCancelButton: true,
-//         confirmButtonColor: "#DD6B55",
-//         confirmButtonText: "Confirm",
-//         cancelButtonText: "Cancel",
-//         allowOutsideClick: false,
-//         allowEscapeKey: false
-//     }).then(function (result) {
-//         if (result.isConfirmed) {
-//             callback(true);
-//         } else {
-//             callback(false);
-//         }
-//     });
-// }
-//
-// function showSuccessAlert() {
-//     Swal.fire({
-//         title: "Success",
-//         text: "Action performs Successfully",
-//         icon: "success",
-//         confirmButtonText: "Ok",
-//     });
-// }
+//delete product
+$(document).on('click', '.js-delete-product', function (el) {
+    let id = $(this).data('id');
+    showDeleteAlert(function (isConfirmed) {
+        if (isConfirmed) {
+            $.ajax({
+                url: '/product/delete/' + id,
+                method: 'DELETE',
+                async: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Accept', 'application/json');
+                    xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+                },
+                success: function (response) {
+                    toastr.success("Product deleted successfully!");
+                    $('#js-add-product-table').html(response);
+                    $('#js-add-product-modal').modal('hide');
+                    $('#js-product-form')[0].reset();
+
+                    // location.reload();
+                },
+                error: function (xhr, status, error) {
+                    let errorMessage = "Error deleting the record.";
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        errorMessage = xhr.responseJSON.message;
+                    }
+                    toastr.error(errorMessage);
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+    });
+});
+
+function showDeleteAlert(callback, message = null , title = null) {
+    Swal.fire({
+        title: title ?? "Are you sure to delete?",
+        text: message ?? "You will not be able to recover this!!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Confirm",
+        cancelButtonText: "Cancel",
+        allowOutsideClick: false,
+        allowEscapeKey: false
+    }).then(function (result) {
+        if (result.isConfirmed) {
+            callback(true);
+        } else {
+            callback(false);
+        }
+    });
+}
+
+function showSuccessAlert() {
+    Swal.fire({
+        title: "Success",
+        text: "Action performs Successfully",
+        icon: "success",
+        confirmButtonText: "Ok",
+    });
+}
 
 
 $(document).ready(function() {
@@ -193,7 +197,6 @@ $(document).ready(function() {
                     xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
                 },
                 success: function(data) {
-                    console.log('success');
                     $('#js-add-product-modal').modal('hide');
                     $('#js-product-form')[0].reset();
                     toastr.success('Product saved successfully');

@@ -2,7 +2,7 @@
     @foreach ($warranties as $warranty)
         <tr>
             <td>{{ @$loop->index + 1}}</td>
-            <td>{{ @$loop->index + 1}}</td>
+            <td>{{ @$warranty->product}}</td>
             <td>{{ @$warranty->start_date}}</td>
             <td>{{ @$warranty->end_date ?? ' - '}}</td>
             <td>{{ @$warranty->image_path ?? ' - '}}</td>

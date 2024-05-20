@@ -46,7 +46,9 @@ class ProductController extends Controller{
     {
         $product =  Product::findOrFail($id);
         if($product){
-            return $product->delete();
+            $product->delete();
+            $products = Product::with('productType')->orderByDesc('created_at')->get();
+            return view('product.data-table', compact('products'))->render();
         }
     }
 }
