@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\FileUploadManager;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WarrantyRequest;
-use App\Models\Product;
+use App\Models\ProductType;
 use App\Models\Warranty;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
@@ -20,42 +20,17 @@ class WarrantyController extends Controller
         return view('warranty.index', compact('warranties'));
 
     }
-//    public function store(WarrantyRequest $request)
-//    {
-//        // Create the warranty record
-//        $data = $request->all();
-//
-//        // Generate QR code data
-//        $qrData = json_encode($request->all());
-//
-//        // Create the QR code
-//        $qrCode = QrCode::format('png')->size(300)->generate($qrData);
-//
-//        // Define the path and filename for the QR code
-//
-//
-//        // Store the QR code in the storage folder
-//        if ($request->hasFile('image_url')) {
-//            $brochure = FileUploadManager::uploadFile($request->file('image_url'), 'public/images/products/');
-//            $data['image_url'] = $brochure['doc_name'];
-//        }
-//        return Warranty::updateOrCreate(['id' => $data['id']],$data);
-//
-//        // Update the warranty record with the QR code path
-//        $warranty->update(['image_url' => $fileName]);
-//
-//        // Return a response or redirect as needed
-//        return redirect()->route('warranty.index')->with('success', 'Warranty created successfully with QR code.');
-//    }
-
-
     public function store(WarrantyRequest $request)
     {
+        $request_data = $request->all();
         // Gather all request data
-        $data = $request->all();
-
+        $data = [];
+        $product = ProductType::findOrFail($request->product_type_id);
+        $data['Product_Name'] = $product->type_name ;
+        $data['Warranty_Start'] = $request->start_date;
+        $data['Valid_Upto'] = $request->end_date;
         // Generate QR code data
-        $qrData = json_encode($request->all());
+        $qrData = json_encode($data);
 
         // Create the QR code and save it as an image
         $qrCode = QrCode::format('png')->size(300)->generate($qrData);
@@ -81,10 +56,10 @@ class WarrantyController extends Controller
 
         // Use the FileUploadManager to handle the uploaded file
         $brochure = FileUploadManager::uploadFile($uploadedFile, 'public/images/warranty/');
-        $data['image_url'] = $brochure['doc_name'];
+        $request_data['image_url'] = $brochure['doc_name'];
 
         // Create or update the warranty record
-        $warranty = Warranty::updateOrCreate(['id' => $data['id']], $data);
+        $warranty = Warranty::updateOrCreate(['id' => $request_data['id']], $request_data);
 
         // Clean up the temporary file
         unlink($qrFilePath);
@@ -99,5 +74,15 @@ class WarrantyController extends Controller
     {
         $data = $request->all();
         return Warranty::update($data);
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $warranty =  Warranty::findOrFail($id);
+        if($warranty){
+            $warranty->delete();
+            $warranties = Warranty::with('productType')->orderByDesc('created_at')->get();
+            return view('warranty.data-table', compact('warranties'))->render();
+        }
     }
 }

@@ -78,7 +78,7 @@ $(document).on('click', '.js-delete-warranty', function (el) {
     showDeleteAlert(function (isConfirmed) {
         if (isConfirmed) {
             $.ajax({
-                url: '/admin/warranty/delete/' + deptId,
+                url: '/warranty/delete/' + deptId,
                 method: 'DELETE',
                 async: false,
                 beforeSend: function (xhr) {
@@ -87,7 +87,9 @@ $(document).on('click', '.js-delete-warranty', function (el) {
                 },
                 success: function (response) {
                     toastr.success("warranty deleted successfully!");
-                    location.reload();
+                    $('#js-add-warranty-table').html(response);
+                    $('#js-warranty-Form')[0].reset();
+
                 },
                 error: function (xhr, status, error) {
                     let errorMessage = "Error deleting the record.";

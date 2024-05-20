@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Warranty extends Model
 {
@@ -14,5 +15,13 @@ class Warranty extends Model
     public function productType()
     {
         return $this->belongsTo(ProductType::class, 'product_type_id');
+    }
+
+    public function getImageUrlAttribute($value)
+    {
+        if ($value) {
+            return url(Storage::url('images/warranty/' . $value));
+        }
+        return null;
     }
 }
