@@ -18,7 +18,7 @@
             <div class="col-12 col-lg-9">
                 <div class="bg-white border rounded shadow-sm overflow-hidden">
 
-                    <form id="js-contact-us-form" METHOD="POST">
+                    <form id="js-contact-us-form23" method="POST" action="{{ route('contact-us.add') }}">
                         @csrf
                         <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                             <div class="col-12">
@@ -89,6 +89,7 @@
                 });
 
                 if (!isValid) {
+                    toastr.error('Please fill all the required fields.');
                     return;
                 }
 
@@ -101,17 +102,21 @@
                     _token: $('input[name="_token"]').val() // Assuming CSRF token is present
                 };
 
-                toastr.success('Your message has been sent successfully!');
-
                 // Make AJAX request to the API
                 $.ajax({
                     url: '/contact-us/add', // Change this URL to your API endpoint
                     type: 'POST',
                     data: formData,
                     success: function(response) {
-                        $('#js-contact-us-form')[0].reset(); // Reset the form
+                        if(response.success) {
+                            toastr.success(response.message);
+                            $('#js-contact-us-form')[0].reset(); // Reset the form
+                        } else {
+                            toastr.error(response.message);
+                        }
                     },
                     error: function(xhr, status, error) {
+                        toastr.error('An error occurred. Please try again later.');
                     }
                 });
             });

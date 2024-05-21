@@ -13,6 +13,7 @@ class ContactUsController extends Controller
         if($query)
         {
             toastr()->success('Your Queries has been Received Successfully!');
+            return redirect()->back();
 
         }
     }

@@ -9,8 +9,7 @@
     <!--Custom-Theme-files-->
     <!--theme-style-->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,7 +27,7 @@
     <script src="{{ asset('assets/js/simpleCart.min.js') }}"> </script>
     <link href="{{ asset('assets/css/memenu.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('assets/css/new-css.css') }}" rel="stylesheet" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script type="text/javascript" src="{{ asset('assets/js/memenu.js') }}"></script>
     <!-- <script>
     $(document).ready(function() {
