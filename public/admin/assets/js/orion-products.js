@@ -162,7 +162,7 @@ function showSuccessAlert() {
 $(document).ready(function() {
     function toggleFormElements() {
         var selectedType = $('#js-product-type-name-dropdown').val();
-        if (selectedType == 1) {
+        if (selectedType == 1 || selectedType == 13) {
             $('#model-name-container, #wattage-container, #initial-lumen-container, #stable-lumen-container, #ra-container, #beam-angle-container, #life-container, #guarantee-container, #lamp-size-h1-container, #lamp-size-h2-container, #lamp-size-d-container').show();
             $('#shape-container, #inch-container, #d-round-container, #d-square-container, #cut-round-container, #cut-square-container, #h-container').hide();
         } else {
