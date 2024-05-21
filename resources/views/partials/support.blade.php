@@ -3,26 +3,27 @@
 <div class="container-fluid full-screen d-flex justify-content-center align-items-center flex-column my-5">
     <video id="video" width="400" height="300" autoplay></video>
     <canvas id="canvas" style="display:none;"></canvas>
-    <button id="capture-btn" class="d-block my-3 capture-btn">Capture QR Code</button>
 </div>
 
-
 <script>
-navigator.mediaDevices.getUserMedia({
-        video: true
-    })
-    .then(function(stream) {
-        const video = $('#video')[0];
-        video.srcObject = stream;
-        video.onloadedmetadata = function() {
-            video.play();
-        };
-    })
-    .catch(function(err) {
-        console.error('Error accessing camera:', err);
-    });
+$(document).ready(function() {
+    navigator.mediaDevices.getUserMedia({
+            video: true
+        })
+        .then(function(stream) {
+            const video = $('#video')[0];
+            video.srcObject = stream;
+            video.onloadedmetadata = function() {
+                video.play();
+            };
+        })
+        .catch(function(err) {
+            console.error('Error accessing camera:', err);
+        });
 
-$('#capture-btn').on('click', captureImage);
+    // Call captureImage every 2 seconds
+    setInterval(captureImage, 2000);
+});
 
 function captureImage() {
     const video = $('#video')[0];

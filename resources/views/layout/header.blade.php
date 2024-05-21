@@ -15,15 +15,18 @@
             <div class="col-md-9 header-left">
                 <div class="top-nav">
                     <ul class="memenu skyblue">
-                        <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                        <li class="grid">
+                        <li class="{{ Request::routeIs('home') ? 'active' : '' }}"><a
+                                href="{{ route('home') }}">Home</a></li>
+                        <li class="grid {{ Request::routeIs('products') ? 'active' : '' }}">
                             <a href="{{ route('products') }}" class="products-link">Products</a>
                             <ul class="product-dropdown">
                                 <li>
                                     <a href="{{ route('consumer') }}">Consumer</a>
                                     <ul class="nestedMenu">
                                         @foreach(@$consumerCategories ?? [] as $category)
-                                            <li><a href="{{ route('product-list', ['id' => $category->id]) }}">{{ $category->type_name }}</a></li>
+                                        <li><a
+                                                href="{{ route('product-list', ['id' => $category->id]) }}">{{ $category->type_name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
                                 </li>
@@ -31,20 +34,26 @@
                                     <a href="{{ route('professional') }}">Professional</a>
                                     <ul class="nestedMenu">
                                         @foreach(@$professionalCategories ?? [] as $category)
-                                            <li><a href="{{ route('product-list', ['id' => $category->id]) }}">{{ $category->type_name }}</a></li>
+                                        <li><a
+                                                href="{{ route('product-list', ['id' => $category->id]) }}">{{ $category->type_name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class="grid"><a href="{{ route('projects')}}">Projects</a>
+                        <li class="grid {{ Request::routeIs('projects') ? 'active' : '' }}"><a
+                                href="{{ route('projects')}}">Projects</a>
                         </li>
-                        <li class="grid"><a href="{{ route('about-us') }}">About Us</a>
-                        <li class="grid"><a href="{{ route('contact-us') }}">Contact Us</a>
+                        <li class="grid {{ Request::routeIs('about-us') ? 'active' : '' }}"><a
+                                href="{{ route('about-us') }}">About Us</a>
+                        <li class="grid {{ Request::routeIs('contact-us') ? 'active' : '' }}"><a
+                                href="{{ route('contact-us') }}">Contact Us</a>
 
                         </li>
-                        <li class="grid"><a href="{{ route('support') }}">Support</a>
+                        <li class="grid {{ Request::routeIs('support') ? 'active' : '' }}"><a
+                                href="{{ route('support') }}">Support</a>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
