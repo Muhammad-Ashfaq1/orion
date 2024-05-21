@@ -36,15 +36,14 @@
 
 
         {{--        modal    --}}
+
         <div class="col-md-6 m-t-30">
-            <!-- sample modal content -->
-            <div id="js-add-warranty-modal" class="modal fade"  data-bs-backdrop='static' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <!-- Sample modal content -->
+            <div id="js-add-warranty-modal" class="modal fade" data-bs-backdrop='static' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title mt-0" id="myModalLabel">
-                                Add New warranty
-                            </h5>
+                            <h5 class="modal-title mt-0" id="myModalLabel">Add New Warranty</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <form id="js-warranty-Form" enctype="multipart/form-data" action="{{ route('warranty.store') }}" method="POST">
@@ -57,24 +56,19 @@
                                         <option value="">Select Product Type</option>
                                     </select>
                                 </div>
-
                                 <div class="col-md-6 p-3">
                                     <label class="form-label required" for="warranty-name">Warranty Name</label>
-                                    <input type="text" class="form-control solid" id="warranty-name" name="warranty_name" placeholder="Enter warranty name" minlength="3">
+                                    <input type="text" class="form-control solid" id="warranty-name" name="warranty_name" placeholder="Enter warranty name" minlength="3" required>
                                 </div>
-
                                 <div class="col-md-6 p-3">
-                                    <label class="form-label required" for="warranty-name">Warranty Start Date</label>
-                                    <input type="date" class="form-control solid" id="warranty-name" name="start_date" required>
+                                    <label class="form-label required" for="start-date">Warranty Start Date</label>
+                                    <input type="date" class="form-control solid" id="start-date" name="start_date" required>
                                 </div>
-
                                 <div class="col-md-6 p-3">
-                                    <label class="form-label required" for="warranty-name">Warranty End Date</label>
-                                    <input type="date" class="form-control solid" id="warranty-name" name="end_date" required>
+                                    <label class="form-label required" for="end-date">Warranty End Date</label>
+                                    <input type="date" class="form-control solid" id="end-date" name="end_date" required>
                                 </div>
                             </div>
-
-
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Save</button>
@@ -84,7 +78,6 @@
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
         </div>
-
 
         {{--        end modal   --}}
 

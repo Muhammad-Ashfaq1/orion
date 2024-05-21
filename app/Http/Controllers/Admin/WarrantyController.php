@@ -26,14 +26,14 @@ class WarrantyController extends Controller
         // Gather all request data
         $data = [];
         $product = ProductType::findOrFail($request->product_type_id);
-        $data['Product_Name'] = $product->type_name ;
+        $data['Product_Name'] = $product->type_name;
         $data['Warranty_Start'] = $request->start_date;
         $data['Valid_Upto'] = $request->end_date;
         // Generate QR code data
         $qrData = json_encode($data);
 
         // Create the QR code and save it as an image
-        $qrCode = QrCode::format('png')->size(300)->generate($qrData);
+        $qrCode = QrCode::format('png')->size(400)->generate($qrData);
         $qrFileName = 'warranty_' . uniqid() . '.png';
         $qrFilePath = storage_path('app/public/images/warranty/' . $qrFileName);
 
@@ -65,8 +65,12 @@ class WarrantyController extends Controller
         unlink($qrFilePath);
 
         // Return a response or redirect as needed
-        return redirect()->route('warranty.index')->with('success', 'Warranty created successfully with QR code.');
-    }    public function edit(Request $request, $id)
+        if($warranty)
+        {
+            return $this->getAllWarrantiesData();
+        }
+    }
+    public function edit(Request $request, $id)
     {
         return Warranty::findOrFail($id);
     }
@@ -84,5 +88,11 @@ class WarrantyController extends Controller
             $warranties = Warranty::with('productType')->orderByDesc('created_at')->get();
             return view('warranty.data-table', compact('warranties'))->render();
         }
+    }
+
+    private function getAllWarrantiesData()
+    {
+        $warranties =  Warranty::with('productType')->get();
+        return view('warranty.data-table', compact('warranties'))->render();
     }
 }

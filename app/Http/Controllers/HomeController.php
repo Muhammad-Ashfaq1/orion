@@ -53,12 +53,6 @@ class HomeController extends Controller
     {
         return view('partials.contact-us');
     }
-
-    public function login()
-    {
-        return view('partials.login');
-    }
-
     public function projects()
     {
         return view('partials.projects');

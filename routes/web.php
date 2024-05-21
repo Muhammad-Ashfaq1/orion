@@ -24,14 +24,13 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/single-product', 'singleProduct')->name('single-product');
     Route::get('/support', 'support')->name('support');
     Route::get('/contact-us', 'contactUs')->name('contact-us');
-    Route::get('/login', 'login')->name('login');
     Route::get('/projects', 'projects')->name('projects');
     Route::get('/products', 'products')->name('products');
     Route::get('/products/consumer', 'consumer')->name('consumer');
     Route::get('/products/professional', 'professional')->name('professional');
 });
 
-Route::controller(ProductController::class)->prefix('product')->group(function () {
+Route::controller(ProductController::class)->prefix('product')->middleware('auth')->group(function () {
     Route::get('/', 'index')->name('my-product.index');
     Route::post('/add', 'store')->name('product.add');
     Route::get('/edit/{id}','edit')->name('product.edit');
@@ -39,13 +38,26 @@ Route::controller(ProductController::class)->prefix('product')->group(function (
     Route::get('get-all-product-type', 'getAllProductType')->name('product.delete');
 });
 
-Route::controller(WarrantyController::class)->prefix('/warranty')->group(function () {
+Route::controller(WarrantyController::class)->prefix('/warranty')->middleware('auth')->group(function () {
     Route::get('/', 'getAllWarranties')->name('warranty.index');
     Route::post('/add', 'store')->name('warranty.store');
     Route::get('/edit/{id}','edit')->name('warranty.edit');
     Route::delete('delete/{id}', 'delete')->name('warranty.delete');
 });
+Route::controller(App\Http\Controllers\AuthController::class)->prefix('admin')->group( function () {
+    Route::get('/login', 'loginForm')->name('login');
+    Route::post('/login', 'login')->name('auth.login');
+    Route::get('/register', 'register')->name('register');
+    Route::post('/register','register')->name('register');
+    Route::get('/logout', 'logout')->name('auth.logout');
+    Route::get('/forgot-password', 'forgotPassword')->name('forgot-password');
+    Route::post('/forgot-password', 'forgotPassword')->name('forgot-password');
+    Route::get('/reset-password/{token}', 'resetPassword')->name('reset-password');
+    Route::post('/reset-password', 'resetPassword')->name('reset-password');
 
-Route::get('/dashboard', function (){
+});
+
+
+Route::get('admin/dashboard', function (){
     return view('dashboard');
-})->name('dashboard');
+})->name('admin.dashboard')->middleware('auth');

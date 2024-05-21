@@ -5,13 +5,37 @@ $(document).on('click', '.js-add-warranty', function (el) {
     $('#js-warranty-Form')[0].reset();
 });
 
-
-
-// add new warranty
 $('#js-warranty-Form').validate({
-    submitHandler: function (form) {
-        event.preventDefault();
+    rules: {
+        product_type_id: {
+            required: true
+        },
+        warranty_name: {
+            required: true,
+            minlength: 3
+        },
+        start_date: {
+            required: true,
+            date: true
+        },
+        end_date: {
+            required: true,
+            date: true
+        }
+    },
+    messages: {
+        product_type_id: "Please select a product type.",
+        warranty_name: {
+            required: "Please enter a warranty name.",
+            minlength: "Warranty name must be at least 3 characters long."
+        },
+        start_date: "Please enter a valid start date.",
+        end_date: "Please enter a valid end date."
+    },
+    submitHandler: function (form, event) {
+        event.preventDefault(); // Prevent the default form submission
         var formData = new FormData($('#js-warranty-Form')[0]);
+
         $.ajax({
             url: '/warranty/add',
             type: 'POST',
@@ -22,26 +46,27 @@ $('#js-warranty-Form').validate({
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Accept', 'application/json');
                 xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
-                // disableModalButton('submit-program-btn');
+                // Optionally disable the submit button to prevent multiple submissions
+                $('#submit-program-btn').prop('disabled', true);
             },
             success: function (data) {
-                console.log('success');
                 $('#js-add-warranty-modal').modal('hide');
                 $('#js-warranty-Form')[0].reset();
                 $('#warranty-id').val("");
-                toastr.success('warranty saved successfully');
-                location.reload();
+                toastr.success('Warranty saved successfully');
+                $('#js-add-warranty-table').html(data);
             },
             error: function (xhr, status, error) {
-                handleAjaxError(xhr);
+                console.error('AJAX request failed:', xhr.status, xhr.statusText);
+                toastr.error('An error occurred while processing your request. Please try again.');
             },
             complete: function () {
-                // disableModalButton('submit-program-btn', false);
+                // Optionally re-enable the submit button
+                $('#submit-program-btn').prop('disabled', false);
             }
         });
     }
 });
-
 
 
 //edit warranty
