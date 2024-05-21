@@ -18,12 +18,13 @@
             <div class="col-12 col-lg-9">
                 <div class="bg-white border rounded shadow-sm overflow-hidden">
 
-                    <form action="#!">
+                    <form id="js-contact-us-form" METHOD="POST">
+                        @csrf
                         <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                             <div class="col-12">
                                 <label for="fullname" class="form-label">Full Name <span
                                         class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="fullname" name="fullname" value="" required>
+                                <input type="text" class="form-control" id="fullname" name="name" value="" required>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
@@ -48,7 +49,7 @@
                                                 d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                                         </svg>
                                     </span>
-                                    <input type="tel" class="form-control" id="phone" name="phone" value="">
+                                    <input type="tel" class="form-control" id="phone" name="phone_number" value="">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -69,5 +70,52 @@
         </div>
     </div>
 </section>
+@endsection
+@section('extra-js')
+    <script>
+        $(document).ready(function() {
+            $('#js-contact-us-form').on('submit', function(e) {
+                e.preventDefault(); // Prevent the default form submission
 
+                // Check if all required fields are filled
+                var isValid = true;
+                $('#js-contact-us-form').find('[required]').each(function() {
+                    if ($(this).val() === '') {
+                        isValid = false;
+                        $(this).addClass('is-invalid'); // Add class to highlight the invalid field
+                    } else {
+                        $(this).removeClass('is-invalid');
+                    }
+                });
+
+                if (!isValid) {
+                    return;
+                }
+
+                // Collect form data
+                var formData = {
+                    name: $('#fullname').val(),
+                    email: $('#email').val(),
+                    phone_number: $('#phone').val(),
+                    message: $('#message').val(),
+                    _token: $('input[name="_token"]').val() // Assuming CSRF token is present
+                };
+
+                toastr.success('Your message has been sent successfully!');
+
+                // Make AJAX request to the API
+                $.ajax({
+                    url: '/contact-us/add', // Change this URL to your API endpoint
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        $('#js-contact-us-form')[0].reset(); // Reset the form
+                    },
+                    error: function(xhr, status, error) {
+                    }
+                });
+            });
+        });
+
+    </script>
 @endsection

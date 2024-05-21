@@ -57,7 +57,11 @@ Route::controller(App\Http\Controllers\AuthController::class)->prefix('admin')->
 
 });
 
-
 Route::get('admin/dashboard', function (){
     return view('dashboard');
 })->name('admin.dashboard')->middleware('auth');
+
+
+Route::controller(\App\Http\Controllers\ContactUsController::class)->prefix('contact-us')->group(function (){
+    Route::post('/add', 'store')->name('contact-us.add');
+});

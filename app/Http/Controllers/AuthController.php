@@ -27,6 +27,7 @@ class AuthController extends Controller
             ]);
         }
         $request->session()->regenerate();
+        toastr()->success('Login successfully!');
         return redirect()->route('admin.dashboard');
     }
 
@@ -34,6 +35,7 @@ class AuthController extends Controller
     {
         Auth::guard('web')->logout();
         $request->session()->invalidate();
+        toastr()->success('Logout successfully!');
         return redirect('/admin/login');
     }
 }
