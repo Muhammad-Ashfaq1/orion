@@ -16,17 +16,23 @@
                         </div>
                     </div>
                     <div class="col-12 mb-2">
-                        <div class="video-thumbnail" data-src="{{ asset('assets/videos/video1.mp4') }}">
+                        <div class="video-thumbnail" data-src="{{ asset('assets/videos/video3.mp4') }}">
                             <img src="{{ asset('assets/images/thumbnail.png') }}" class="img-fluid" alt="Thumbnail 5">
                         </div>
                     </div>
                     <div class="col-12 mb-2">
-                        <div class="video-thumbnail" data-src="{{ asset('assets/videos/video2.mp4') }}">
+                        <div class="video-thumbnail" data-src="{{ asset('assets/videos/video4.mp4') }}">
                             <img src="{{ asset('assets/images/thumbnail.png') }}" class="img-fluid" alt="Thumbnail 5">
                         </div>
                     </div>
                     <div class="col-12 mb-2">
-                        <div class="video-thumbnail" data-src="{{ asset('assets/videos/video1.mp4') }}">
+                        <div class="video-thumbnail" data-src="{{ asset('assets/videos/Video5.mp4') }}">
+                            <img src="{{ asset('assets/images/thumbnail.png') }}" class="img-fluid" alt="Thumbnail 5">
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-2">
+                        <div class="video-thumbnail" data-src="{{ asset('assets/videos/video6.mp4') }}">
                             <img src="{{ asset('assets/images/thumbnail.png') }}" class="img-fluid" alt="Thumbnail 5">
                         </div>
                     </div>
