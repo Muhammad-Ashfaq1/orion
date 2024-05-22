@@ -23,7 +23,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/product-list/{id?}', 'productList')->name('product-list');
     Route::get('/single-product', 'singleProduct')->name('single-product');
     Route::get('/support', 'support')->name('support');
-    Route::get('/contact-us', 'contactUs')->name('contact-us');
+    Route::get('/contact-us/page', 'contactUs')->name('contact-us');
     Route::get('/projects', 'projects')->name('projects');
     Route::get('/products', 'products')->name('products');
     Route::get('/products/consumer', 'consumer')->name('consumer');
@@ -63,5 +63,6 @@ Route::get('admin/dashboard', function (){
 
 
 Route::controller(\App\Http\Controllers\ContactUsController::class)->prefix('contact-us')->group(function (){
+    Route::get('/', 'index')->name('contact-us.index')->middleware('auth');
     Route::post('/add', 'store')->name('contact-us.add');
 });
