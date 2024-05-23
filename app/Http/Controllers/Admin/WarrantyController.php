@@ -32,9 +32,13 @@ class WarrantyController extends Controller
         // Generate QR code data
         $qrData = json_encode($data);
 
-        // Create the QR code and save it as an image
-        $qrCode = QrCode::format('png')->size(400)->generate($qrData);
-        $qrFileName = 'warranty_' . uniqid() . '.png';
+        // Create the QR code with a margin to center it
+        $qrCodeSvg = QrCode::size(300)
+            ->backgroundColor(255, 255, 255)
+            ->margin(10) // Adjust the margin to center the QR code
+            ->generate($qrData);
+
+        $qrFileName = 'warranty_' . uniqid() . '.svg';
         $qrFilePath = storage_path('app/public/images/warranty/' . $qrFileName);
 
         // Ensure the directory exists
@@ -42,14 +46,14 @@ class WarrantyController extends Controller
             Storage::makeDirectory('public/images/warranty');
         }
 
-        // Store the QR code image in the filesystem
-        file_put_contents($qrFilePath, $qrCode);
+        // Store the SVG file in the filesystem
+        file_put_contents($qrFilePath, $qrCodeSvg);
 
-        // Create an UploadedFile instance from the temporary file
+        // Create an UploadedFile instance from the SVG file
         $uploadedFile = new UploadedFile(
             $qrFilePath,
             $qrFileName,
-            'image/png',
+            'image/svg+xml',
             null,
             true
         );
@@ -61,12 +65,11 @@ class WarrantyController extends Controller
         // Create or update the warranty record
         $warranty = Warranty::updateOrCreate(['id' => $request_data['id']], $request_data);
 
-        // Clean up the temporary file
+        // Clean up the SVG file
         unlink($qrFilePath);
 
         // Return a response or redirect as needed
-        if($warranty)
-        {
+        if ($warranty) {
             return $this->getAllWarrantiesData();
         }
     }
