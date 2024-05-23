@@ -2,7 +2,6 @@
 @section('content')
     <div class="container-fluid full-screen d-flex justify-content-center align-items-center flex-column my-5">
         <video id="video" width="400" height="300" autoplay></video>
-        <canvas id="canvas" width="400" height="300"></canvas>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -11,8 +10,6 @@
     <script>
         $(document).ready(function() {
             const video = document.getElementById('video');
-            const canvas = document.getElementById('canvas');
-            const context = canvas.getContext('2d', { willReadFrequently: true });
 
             navigator.mediaDevices.getUserMedia({ video: true })
                 .then(function(stream) {
@@ -31,7 +28,7 @@
 
         function captureImage() {
             const video = document.getElementById('video');
-            const canvas = document.getElementById('canvas');
+            const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
@@ -68,7 +65,7 @@
                                 timer: 5000, // Adjust as needed
                                 allowOutsideClick: false,
                                 showCloseButton: true,
-                                closeButtonHtml: '&times;',
+                                closeButtonHtml: '<button class="custom-close-button">&times;</button>',
                                 customClass: {
                                     popup: 'larger-swal'
                                 }
@@ -122,6 +119,12 @@
     <style>
         .larger-swal {
             font-size: 1.5rem;
+        }
+        .custom-close-button {
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
         }
     </style>
 @endsection
