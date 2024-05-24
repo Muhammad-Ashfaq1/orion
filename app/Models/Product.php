@@ -31,6 +31,11 @@ class Product extends Model
         'cut_round',
         'h',
         'image_url',
+        'lamp_size_w',
+        'lamp_size_i',
+        'lamp_size_l',
+        'lamp_size_t',
+        'ip_class',
         ];
     public function productType()
     {

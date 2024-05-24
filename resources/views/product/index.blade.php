@@ -65,12 +65,12 @@
 
                                     <div class="col-md-6 p-3" id="shape-container">
                                         <label class="form-label">Shape</label>
-                                        <input type="text" class="form-control solid" name="shape" placeholder="Model Name">
+                                        <input type="text" class="form-control solid" name="shape" placeholder="Shape">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="inch-container">
                                         <label class="form-label">Inch</label>
-                                        <input type="number" class="form-control solid" name="inches" placeholder="Model Name" step="0.01">
+                                        <input type="number" class="form-control solid" name="inches" placeholder="Inches" step="0.01">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="wattage-container">
@@ -110,27 +110,27 @@
 
                                     <div class="col-md-6 p-3" id="d-round-container">
                                         <label class="form-label">D Round</label>
-                                        <input type="number" class="form-control solid" name="d_round" placeholder="Model Name">
+                                        <input type="number" class="form-control solid" name="d_round" placeholder="D Round">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="d-square-container">
                                         <label class="form-label">D Square</label>
-                                        <input type="number" class="form-control solid" name="d_square" placeholder="Model Name">
+                                        <input type="text" class="form-control solid" name="d_square" placeholder="D Square">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="cut-round-container">
                                         <label class="form-label">Cut Round</label>
-                                        <input type="number" class="form-control solid" name="cut_round" placeholder="Model Name">
+                                        <input type="text" class="form-control solid" name="cut_round" placeholder="Cut Round">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="cut-square-container">
                                         <label class="form-label">Cut Square</label>
-                                        <input type="number" class="form-control solid" name="cut_square" placeholder="Model Name">
+                                        <input type="text" class="form-control solid" name="cut_square" placeholder="Cut Square">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="h-container">
                                         <label class="form-label">H</label>
-                                        <input type="number" class="form-control solid" name="h" placeholder="Model Name">
+                                        <input type="number" class="form-control solid" name="h" placeholder="H">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="lamp-size-h1-container">
@@ -146,6 +146,26 @@
                                     <div class="col-md-6 p-3" id="lamp-size-d-container">
                                         <label class="form-label">Lamp Size D</label>
                                         <input type="number" class="form-control solid" name="lamp_size_d" placeholder="Enter Lamp Size D" required>
+                                    </div>
+
+                                    <div class="col-md-6 p-3" id="lamp-size-w-container">
+                                        <label class="form-label">Lamp Size W</label>
+                                        <input type="text" class="form-control solid" name="lamp_size_w" placeholder="Enter Lamp Size W">
+                                    </div>
+
+                                    <div class="col-md-6 p-3" id="lamp-size-l-container">
+                                        <label class="form-label">Lamp Size L</label>
+                                        <input type="text" class="form-control solid" name="lamp_size_l" placeholder="Enter Lamp Size L">
+                                    </div>
+
+                                    <div class="col-md-6 p-3" id="lamp-size-i-container">
+                                        <label class="form-label">Lamp Size I</label>
+                                        <input type="text" class="form-control solid" name="lamp_size_i" placeholder="Enter Lamp Size I">
+                                    </div>
+
+                                    <div class="col-md-6 p-3" id="lamp-size-t-container">
+                                        <label class="form-label">Lamp Size T</label>
+                                        <input type="text" class="form-control solid" name="lamp_size_t" placeholder="Enter Lamp Size T">
                                     </div>
 
                                     <div class="col-md-6 p-3" id="image-url-container">
