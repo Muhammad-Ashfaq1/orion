@@ -4,7 +4,7 @@
     @foreach($products as $product)
     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6">
         <div class="consumer-sub-content">
-            <a href="">
+            <a href="{{ route('single-product', ['id' => $product->id]) }}">
                 <div class="consumer-sub-img">
                     <img src="{{ !empty($product->image_url) ? $product->image_url : asset('assets/images/indoor1.jpeg') }}"
                         alt="">

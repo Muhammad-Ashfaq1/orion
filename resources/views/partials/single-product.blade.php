@@ -3,15 +3,17 @@
 <div class="container bootdey">
     <div class="col-md-12">
         <section class="panel">
-            <div class="panel-body">
+            @if(!empty($product))
+             <div class="panel-body">
                 <div class="col-12">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-5 col-12 ps-5 ">
-                            <h1 class="single-heading">LED Bulb</h1>
-                            <p class="single-para">Latest Generation of Energy Saving Product</p>
+                            <h1 class="single-heading">{{ $product->productType->type_name }}</h1>
+                            <p class="single-para">{{ $product->product_model }}</p>
                         </div>
                         <div class="col-md-5 col-12 text-center">
-                            <img src="{{ asset('assets/images/p-1.jpg') }}" alt="" width="300">
+                            <img src="{{ !empty(@$product->image_url) ? @$product->image_url : asset('assets/images/indoor1.jpeg') }}"
+                                 alt="" width="300">
                         </div>
                     </div>
                 </div>
@@ -125,6 +127,7 @@
                     </table>
                 </div>
             </div>
+            @endif
         </section>
     </div>
     <div class="container single-tab">

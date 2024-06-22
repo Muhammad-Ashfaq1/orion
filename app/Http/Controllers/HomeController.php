@@ -39,9 +39,10 @@ class HomeController extends Controller
         return view('partials.product-list', compact('products'));
     }
 
-    public function singleProduct()
+    public function singleProduct($id)
     {
-        return view('partials.single-product');
+        $product = Product::with('productType')->findOrFail($id);
+        return view('partials.single-product', compact('product'));
     }
 
     public function support()
