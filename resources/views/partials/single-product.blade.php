@@ -25,7 +25,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col" colspan="2">LED Chips LED</th>
+                                <th scope="col" colspan="2">{{ $product->productType->type_name }}</th>
                             </tr>
                         </thead>
                         <tbody>
