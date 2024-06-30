@@ -9,7 +9,6 @@
     <meta content="Admin Dashboard" name="description" />
     <meta content="Themesbrand" name="author" />
     <link rel="shortcut icon" href="{{asset('admin/assets/images/favicon.ico')}}">
-    <link rel="stylesheet" href="{{asset('admin/assets/plugins/morris/morris.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
     <link href="{{asset('admin/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
@@ -55,9 +54,8 @@
     <script src="{{asset('admin/assets/plugins/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
     <!-- Peity JS -->
     <script src="{{asset('admin/assets/plugins/peity/jquery.peity.min.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/morris/morris.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/raphael/raphael-min.js')}}"></script>
-    <script src="{{asset('admin/assets/pages/dashboard.js')}}"></script>
+{{--    <script src="{{asset('admin/assets/pages/dashboard.js')}}"></script>--}}
     <!-- App js -->
     <script src="{{asset('admin/assets/js/app.js')}}"></script>
 

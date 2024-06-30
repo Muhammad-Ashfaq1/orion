@@ -21,7 +21,7 @@
             <td>
                 <div class="action-buttons d-flex justify-content-center position-relative">
                     <div class="action-buttons-container">
-{{--                        <button data-id="{{ @$product->id }}" class="js-edit-asset-register btn btn-info" style="cursor: pointer">Edit</button>--}}
+                        <button data-id="{{ @$product->id }}" class="js-edit-asset-register btn btn-info" style="cursor: pointer">Edit</button>
                         <button data-id="{{ @$product->id }}" class="js-delete-product btn btn-danger"
                                 style="cursor: pointer">Delete</button>
                     </div>

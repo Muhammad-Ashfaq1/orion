@@ -9,7 +9,7 @@
                     <img src="{{ !empty($product->image_url) ? $product->image_url : asset('assets/images/indoor1.jpeg') }}"
                         alt="">
                 </div>
-                <h3 class="consumer-sub-link">{{ $product->product_model }} with {{ $product->wattage }} Wattssss</h3>
+                <h3 class="consumer-sub-link">{{ $product->product_model }} with {{ $product->wattage }} Watt</h3>
             </a>
         </div>
     </div>
