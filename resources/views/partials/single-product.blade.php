@@ -30,27 +30,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2" class="align-middle">LED Chips</td>
-                                <td>EPISTAR SMD</td>
+                                <td>Light Efficiency(Initial Lumen)</td>
+                                <td>{{ @$product->initial_lumen }}</td>
                             </tr>
                             <tr>
-                                <td>BRIDGELUX</td>
+                                <td>Light Efficiency(Stable Lumen)</td>
+                                <td>{{ @$product->stable_lumen }}</td>
                             </tr>
-                            <tr>
-                                <td>Light Efficiency</td>
-                                <td>100 lm/w</td>
-                            </tr>
-                            <tr>
-                                <td>Color Temprature</td>
-                                <td>2700K, 4000K, 6400K, 8000K, 10000K</td>
-                            </tr>
+{{--                            <tr>--}}
+{{--                                <td>Color Temprature</td>--}}
+{{--                                <td>2700K, 4000K, 6400K, 8000K, 10000K</td>--}}
+{{--                            </tr>--}}
                             <tr>
                                 <td>Color Rendering Index</td>
                                 <td>80</td>
                             </tr>
                             <tr>
                                 <td>Beam Angle</td>
-                                <td>180 &deg;</td>
+                                <td>{{ @$product->beam_angle }} &deg;</td>
                             </tr>
                             <tr>
                                 <td>Type</td>
@@ -79,33 +76,21 @@
 
                         <thead>
                             <tr>
-                                <th scope="col" colspan="2">Drive</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Driver Mode</td>
-                                <td>Constant Current Output Driver</td>
-                            </tr>
-                        </tbody>
-
-                        <thead>
-                            <tr>
                                 <th scope="col" colspan="2">General Specification</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Voltage</td>
-                                <td>85V/300V</td>
+                                <td>Watt</td>
+                                <td>{{ @$product->wattage }}</td>
                             </tr>
                             <tr>
                                 <td>Life Span</td>
-                                <td>50000 Hours</td>
+                                <td>{{ @$product->life_hours }} Hours</td>
                             </tr>
                             <tr>
                                 <td>Warranty</td>
-                                <td>3 Years</td>
+                                <td>{{ @$product->guarantee ?? 2 }} Years</td>
                             </tr>
                             <tr>
                                 <td>Certification</td>

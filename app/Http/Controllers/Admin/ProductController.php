@@ -28,7 +28,6 @@ class ProductController extends Controller{
 
     public function store(Request $request)
     {
-//        dd($request->all());
         $data = $request->all();
         if ($request->hasFile('image_url')) {
             $brochure = FileUploadManager::uploadFile($request->file('image_url'), 'public/images/products/');
