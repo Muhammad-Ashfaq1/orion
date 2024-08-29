@@ -1103,10 +1103,13 @@ background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%
     border-radius: 8px;
 }
 .video-thumbnail-container{
-        height: 505px;
-        /* overflow: auto; */
+        height: 250px;
+        padding: 40px 20px;
+        /* background-color: rgb(211, 209, 209); */
 }
-
+.slick-next, .slick-prev {
+    top: 90% !important;
+}
 
 .video-thumbnail-container::-webkit-scrollbar {
   width: 4px;

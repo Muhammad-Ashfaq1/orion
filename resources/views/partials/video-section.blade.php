@@ -7,8 +7,8 @@
                         autoplay></video>
                 </div>
             </div>
-            <div class="col-lg-12 ps-0">
-                <div class="row video-thumbnail-container">
+            <div class="col-lg-12 p-0">
+                <div class="row video-thumbnail-container multi-video-carousel w-100">
                     <div class="col-md-3">
                         <div class="video-thumbnail" data-src="{{ asset('assets/videos/video2.mp4') }}">
                             <img src="{{ asset('assets/images/thumbnail.png') }}" class="img-fluid" alt="Thumbnail 5">
@@ -42,7 +42,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 $(document).ready(function() {
     $('.video-thumbnail').click(function() {
@@ -50,5 +50,13 @@ $(document).ready(function() {
         console.log('videoSrc', videoSrc)
         $('#main-video').attr('src', videoSrc);
     });
+
+    $('.multi-video-carousel').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
 });
+
 </script>
