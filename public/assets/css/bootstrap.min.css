@@ -5979,7 +5979,10 @@ fieldset:disabled .btn {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    outline: 0
+    display: flex;
+    justify-content: center;
+    outline: 0;
+    padding: 20px;
 }
 
 .modal-dialog {
@@ -6031,13 +6034,14 @@ fieldset:disabled .btn {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
     pointer-events: auto;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
-    outline: 0
+    outline: 0;
+    padding: 20px;kc
 }
 
 .modal-backdrop {

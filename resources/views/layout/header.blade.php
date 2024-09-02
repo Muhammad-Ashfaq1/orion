@@ -1,18 +1,24 @@
 <div class="header-bottom">
-    <div class="container">
+    {{-- <div class="container">
         <div class="row align-items-center">
             <div class="col-5">
                 <div class="logos">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="">
-                    </a>
+                        <img src="{{ asset('assets/images/remove-bg-logo.png') }}" alt="">
+                    </a>    
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class=".container-fluid p-0 header-wrapper">
         <div class="header container">
+            <div class="logos">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('assets/images/remove-bg-logo.png') }}" alt="">
+                </a>    
+            </div>
             <div class="col-md-9 header-left">
+                
                 <div class="top-nav">
                     <ul class="memenu skyblue">
                         <li class="{{ Request::routeIs('home') ? 'active' : '' }}"><a
@@ -58,7 +64,7 @@
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            <div class="col-md-3 header-right">
+            <div class="header-right p-0">
                 <div class="search-bar">
                     <input type="text" value="Search" onfocus="this.value = '';"
                         onblur="if (this.value == '') {this.value = 'Search';}">

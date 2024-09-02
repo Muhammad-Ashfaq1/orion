@@ -1104,7 +1104,7 @@ background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%
 }
 .video-thumbnail-container{
         height: 250px;
-        padding: 40px 20px;
+        padding: 20px 20px;
         /* background-color: rgb(211, 209, 209); */
 }
 .slick-next, .slick-prev {
@@ -1299,3 +1299,7 @@ background: linear-gradient(281deg, rgba(35,0,150,1) 35%, rgba(30,60,105,1) 100%
 .sidebar .inner-filters .form-check{
     padding-left: 13px;
 }
+
+/* .multi-video-carousel {
+    width
+} */
