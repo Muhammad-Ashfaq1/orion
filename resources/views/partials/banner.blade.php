@@ -5,7 +5,9 @@
              <!-- Slides -->
              <div class="swiper-slide">
                 <div class="backdrop"></div>
-                <img src="{{ asset('assets/images/slider4.jpeg') }}" alt="" class="mainImg">
+                <img src="{{ asset('assets/images/Lighting-1024x768.jpg') }}" alt="" class="mainImg">
+                {{-- C:\xampp\htdocs\orion\public\assets\images\Lighting-1024x768.jpg --}}
+                {{-- C:\xampp\htdocs\orion\public\assets\images\What-are-led-lights.jpg --}}
                 <div class="swiper-caption">
                     <div class="row ">
                         <div class="col-md-6 col-12">
