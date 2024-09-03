@@ -26,7 +26,7 @@
 
     $('.multi-video-carousel').slick({
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         autoplay: true,
         autoplaySpeed: 2000,
         // asNavFor: '.swiper-wrapper',
@@ -36,26 +36,6 @@
     });
 });
 
-// <script type="text/javascript">
-//   $(document).ready(function(){
-//     $('.slider-for').slick({
-//       slidesToShow: 1,
-//       slidesToScroll: 1,
-//       arrows: false,
-//       fade: true,
-//       asNavFor: '.slider-nav'
-//     });
-//     $('.multi-video-carousel').slick({
-//         slidesToShow: 4,
-//         slidesToScroll: 1,
-//         autoplay: true,
-//         autoplaySpeed: 2000,
-//         asNavFor: '.slider-for',
-//         dots: true,
-//         centerMode: true,
-//         focusOnSelect: true
-//     });
-//   });
 </script>
 
 @endsection

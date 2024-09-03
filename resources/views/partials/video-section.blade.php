@@ -6,7 +6,7 @@
             <div class="row multi-video-carousel m-1 p-3">
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 product-cards">
                     <div class="consumer-sub-content">
-                        <a href="{{ route('product-list') }}">
+                        <a href="">
                             <div class="consumer-sub-img2">
                                 <img src="{{ asset('assets/images/image-slide11.jpg') }}" alt="">
                             </div>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 product-cards">
                     <div class="consumer-sub-content">
-                        <a href="{{ route('product-list') }}">
+                        <a href="">
                             <div class="consumer-sub-img2">
                                 <img src="{{ asset('assets/images/image-slide3.jpg') }}" alt="">
                             </div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 product-cards">
                     <div class="consumer-sub-content">
-                        <a href="{{ route('product-list') }}">
+                        <a href="">
                             <div class="consumer-sub-img2">
                                 <img src="{{ asset('assets/images/image-slide2.jpg') }}" alt="">
                             </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 product-cards">
                     <div class="consumer-sub-content">
-                        <a href="{{ route('product-list') }}">
+                        <a href="">
                             <div class="consumer-sub-img2">
                                 <img src="{{ asset('assets/images/image-slid4.jpg') }}" alt="">
                             </div>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 product-cards">
                     <div class="consumer-sub-content">
-                        <a href="{{ route('product-list') }}">
+                        <a href="">
                             <div class="consumer-sub-img2">
                                 <img src="{{ asset('assets/images/image-slide5.jpg') }}" alt="">
                             </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6 product-cards">
                     <div class="consumer-sub-content">
-                        <a href="{{ route('product-list') }}">
+                        <a href="">
                             <div class="consumer-sub-img2">
                                 <img src="{{ asset('assets/images/image-slide12.jpg') }}" alt="">
                             </div>
