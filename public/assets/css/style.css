@@ -1,9 +1,11 @@
-/*--A Design by W3layouts
+
+
+/* A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+License URL: http://creativecommons.org/licenses/by/3.0/ */
+
 body {
     background: #fff;
     font-family: 'Lato-Regular';
@@ -66,7 +68,7 @@ body a {
 
 .search-bar input[type="text"] {
     width: 100%;
-    padding: 8px 45px 8px 8px;
+    padding: 8px 8px 8px 8px;
     border: 1px solid #F5F5F5;
     background: none;
     outline: none;
@@ -75,10 +77,11 @@ body a {
     font-size: 0.875em;
     font-family: 'Lato', sans-serif;
     position: relative;
+    height: 40px;
 }
 
 .search-bar input[type="submit"] {
-    background: url(../images/search.png)no-repeat 0px 0px;
+    background: url('../images/search.png') no-repeat 0px 0px;
     outline: none;
     -webkit-appearance: none;
     border: 0;
@@ -420,9 +423,9 @@ span.simpleCart_total {
     color: #fff;
 }
 
-.header-bottom {
-    padding: 18px 0px;
-}
+/* .header-bottom {
+    padding: 0px;
+} */
 
 /*--end-bottom-header--*/
 /*--banner-Part-starts-Here --*/
@@ -3207,16 +3210,16 @@ h3.ghj {
         height: 40px !important;
     }
 
-    .header-right {
+    /* .header-right {
         width: 35%;
-    }
+    } */
 
     .header-left {
         width: 65%;
     }
 
     .search-bar input[type="text"] {
-        padding: 7px 45px 7px 8px;
+        padding: 7px 8px 7px 8px;
     }
 
     .search-bar input[type="submit"] {
@@ -3408,10 +3411,10 @@ h3.ghj {
         margin-top: 3px;
     }
 
-    .search-bar input[type="text"] {
+    /* .search-bar input[type="text"] {
         padding: 5px 20px 5px 8px;
         font-size: 11px;
-    }
+    } */
 
     .banner, .banner1, .banner2 {
         min-height: 125px;
