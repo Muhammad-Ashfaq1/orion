@@ -27,6 +27,8 @@
                                         <li><a
                                                 href="{{ route('product-list', ['id' => $category->id]) }}">{{ $category->type_name }}</a>
                                         </li>
+                               
+                               
                                         @endforeach
                                     </ul>
                                 </li>

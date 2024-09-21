@@ -34,6 +34,21 @@
                         <span>Orion Queries</span>
                     </a>
                 </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{{  route('contact-us.index') }}">
+                        <i class="fas fa-building"></i>
+                        <span>Orion Queries</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{  route('specification') }}">
+                        <i class="fas fa-building"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
             </ul>
 
         </div>

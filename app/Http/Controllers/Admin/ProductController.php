@@ -50,4 +50,40 @@ class ProductController extends Controller{
             return view('product.data-table', compact('products'))->render();
         }
     }
+
+
+
+    public function productList(Request $request , $id=null)
+    {
+      
+       
+      
+ 
+       
+      
+
+        if ($id) {
+           
+            // Fetch products of the specific type
+            $products = Product::with('productType')->where('product_type_id',$id)->get();
+           
+        } else {
+
+           
+            // Fetch all products
+            $products = Product::with('productType')->get();
+        }
+
+        // If the request is AJAX, return a partial view or JSON response
+        if ($request->ajax()) {
+
+           
+            return view('partials.product-data-table', compact('products'))->render();
+        }
+
+      
+
+        // Otherwise, return the full view
+        return view('partials.products-list', compact('products'));
+    }
 }

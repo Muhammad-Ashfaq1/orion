@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\WarrantyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SpecificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,3 +67,33 @@ Route::controller(\App\Http\Controllers\ContactUsController::class)->prefix('con
     Route::get('/', 'index')->name('contact-us.index')->middleware('auth');
     Route::post('/add', 'store')->name('contact-us.add');
 });
+
+Route::controller(SpecificationController::class)->prefix('specification')->group(function (){
+
+    Route::get('/show/{id}', 'show')->name('model_specification');
+    Route::get('/detail/{id}', 'detail')->name('detail');
+   
+
+
+      
+
+    });
+
+
+
+    Route::middleware('auth')->controller(SpecificationController::class)->prefix('specification')->group(function (){
+        Route::get('/', 'index')->name('specification');
+        Route::get('/models', 'getProductModelsByType');
+        Route::post('/add', 'store');
+        Route::post('/show', 'listing');
+        Route::get('/edit/{id}', 'edit');
+        Route::get('/delete/{id}', 'delete');
+ 
+      //  Route::post('/show', 'listing');
+         });
+
+
+         Route::controller(ProductController::class)->prefix('product')->group(function () {
+            Route::get('/product-list/{id?}', 'productList')->name('product-list');
+
+        });
