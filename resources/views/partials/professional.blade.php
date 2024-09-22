@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+
 <div class="row p-md-5 gx-0">
     <div class="col-lg-12 p-5">
         <h1 class="consumer-heading">Professional</h1>
@@ -8,7 +9,7 @@
                 @foreach($products as $product)
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-6">
                         <div class="consumer-sub-content">
-                            <a href="{{ route('single-product') }}">
+                            <a href="{{  route('product-list', ['id' => $product->id]) }}">
                                 <div class="consumer-sub-img">
                                     <img src="{{ !empty($product->image_url) ? asset('assets/images/professional/' . $product->image_url) : asset('assets/images/indoor1.jpeg') }}" alt="">
                                 </div>

@@ -86,4 +86,11 @@ class ProductController extends Controller{
         // Otherwise, return the full view
         return view('partials.products-list', compact('products'));
     }
+
+   
+    public function professional()
+    {
+        $products = ProductType::where('product_category_id',ProductType::PROFESSIONAL_TYPE)->get();
+        return view('partials.products-professional', compact('products'));
+    }
 }
