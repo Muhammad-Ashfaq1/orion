@@ -19,7 +19,7 @@
                             <th>#</th>
                             <th>Contact Person</th>
                             <th>Message</th>
-                            <th>Date</th>
+                            <th>Type</th>
                             <th>Phone No</th>
                             <th>Email</th>
                             <th>Actions</th>
